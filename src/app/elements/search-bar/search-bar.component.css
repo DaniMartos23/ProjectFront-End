@@ -1,0 +1,19 @@
+
+       .search-input input{
+        height: 6vh;
+        width: 40vw;
+        text-indent: 25px;
+       }
+
+
+       .search-input input:focus{
+
+        box-shadow: none;
+        border: 2px solid rgb(0, 0, 0);
+       }
+
+
+       .btn{
+        height: 6vh;
+       }
+
