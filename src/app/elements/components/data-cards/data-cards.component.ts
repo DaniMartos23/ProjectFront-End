@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 
 @Component({
   selector: 'app-data-cards',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./data-cards.component.css']
 })
 export class DataCardsComponent {
-
+  @Input() datos: any;
 }
