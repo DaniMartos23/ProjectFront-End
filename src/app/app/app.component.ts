@@ -17,6 +17,7 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
+    console.log(this.tokenStorageService.getToken());
 
     if(this.isLoggedIn){
       const user = this.tokenStorageService.getUser();
@@ -25,6 +26,7 @@ export class AppComponent implements OnInit{
       this.showAdminCrud = this.roles.includes('ROLE_ADMIN');
 
       this.username = user.username;
+      console.log(this.username)
     }
 
 
