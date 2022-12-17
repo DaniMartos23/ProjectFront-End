@@ -4,6 +4,20 @@ import { AddEditHotelsComponent } from './add-edit-hotels/add-edit-hotels.compon
 import { ListHotelsComponent } from './listhotels/listhotels.component';
 import { SeeHotelsComponent } from './seehotels/seehotels.component';
 
+import { MatSliderModule } from '@angular/material/slider';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -13,7 +27,13 @@ import { SeeHotelsComponent } from './seehotels/seehotels.component';
     SeeHotelsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
+  ],
+  exports:[
+    AddEditHotelsComponent,
+    ListHotelsComponent,
+    SeeHotelsComponent
   ]
 })
 export class CrudHotelesModule { }

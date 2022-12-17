@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Hoteles } from 'src/app/interfases/hoteles';
 import { HotelesService } from 'src/app/services/hoteles.service';
 
+
 @Component({
   selector: 'app-add-edit-hotels',
   templateUrl: './add-edit-hotels.component.html',
@@ -65,7 +66,7 @@ export class AddEditHotelsComponent {
     /* const nombre = this.form.get('nombre')?.value; */
 
     // Armamos el objeto
-    const hotHoteles = {
+    const hoteles = {
       nombre: this.form.value.nombre,
       estrellas: this.form.value.estrellas,
       direccion: this.form.value.direccion,
@@ -75,13 +76,14 @@ export class AddEditHotelsComponent {
       tipo_pension: this.form.value.tipo_pension,
       mascotas: this.form.value.mascotas
     }
-
+/*
     if(this.id != 0) {
       hoteles.id = this.id;
       this.editarHoteles(this.id, hoteles);
     } else {
       this.agregarHoteles(hoteles);
     }
+    */
   }
 
   editarHoteles(id: number, hoteles: Hoteles) {

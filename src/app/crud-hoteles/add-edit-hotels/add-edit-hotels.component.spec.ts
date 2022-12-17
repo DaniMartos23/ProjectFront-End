@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddEditHotelsComponent } from './add-edit-hotels.component';
+import {MatCardModule} from '@angular/material/card';
 
 describe('AddEditHotelsComponent', () => {
   let component: AddEditHotelsComponent;
