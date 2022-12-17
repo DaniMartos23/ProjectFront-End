@@ -46,6 +46,7 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     ElementsModule,
+    LoginsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
