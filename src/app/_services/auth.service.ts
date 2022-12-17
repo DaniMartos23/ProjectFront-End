@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 
-const API_URL = 'https://localhost:8181/';
+const API_URL = 'https://projectback-end-production-59f5.up.railway.app/';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type':'application/json'})
@@ -24,7 +24,7 @@ export class AuthService {
   }
 
   register(nombre:string, usuario: string, contraseña: string, correo:string): Observable<any>{
-    return this.http.post(API_URL + 'api/usuario', {
+    return this.http.post(API_URL + 'api/usuarios', {
       nombre,
       usuario,
       contraseña,
