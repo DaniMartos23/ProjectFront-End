@@ -5,11 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ElementsModule } from './elements/elements.module';
+
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
 
+
+
+import { LoginsModule } from './logins/logins.module';
 
 
 @NgModule({
@@ -25,6 +29,7 @@ import { TermsComponent } from './terms/terms.component';
     BrowserModule,
     AppRoutingModule,
     ElementsModule,
+    LoginsModule,
     HttpClientModule
   ],
   providers: [],
