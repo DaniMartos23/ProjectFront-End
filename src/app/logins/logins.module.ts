@@ -4,7 +4,6 @@ import { LoginsComponent } from './logins.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginsRoutingModule } from './logins-routing.module';
-import { FormsModule } from '@angular/forms';
 
 
 
@@ -16,8 +15,7 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    LoginsRoutingModule,
-    FormsModule
+    LoginsRoutingModule
   ],
   exports:[
     LoginComponent,
