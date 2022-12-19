@@ -31,6 +31,7 @@ import { LoginsComponent } from './logins/logins.component';
 
 
 
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -42,6 +43,7 @@ import { LoginsComponent } from './logins/logins.component';
     AboutComponent,
     PrivacyComponent,
     TermsComponent,
+
 
   ],
   imports: [

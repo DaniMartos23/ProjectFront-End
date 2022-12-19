@@ -1,1 +1,499 @@
-<p>home works!</p>
+
+<section id="videobg" class="container">
+  <div class="video-container">
+    <h1>Bienvenido al AmazongTrip el portal de viajes que te llevará a conocer los parajes mas hermosos de España </h1>
+    <p>Alojamiento, Vuelos, Destinos, Promos y muchos mas</p>
+    <p>¿Quieres viajar con nosotros?</p>
+    <video muted autoplay loop>
+      <source src="assets/spain.mp" type="video/mp4">
+      <button type="button">LLevame</button>
+    </video>
+    <div class="capa"></div>
+  </div>
+</section>
+<hr>
+<div class="container">
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-dark bg-opacity-25 mt-4">
+      <li class="breadcrumb-item active" aria-current="page">Home</li>
+    </ol>
+  </nav>
+
+  <div class="banner d-flex row mb-4 mt-5">
+    <div class="col-sm-4 text-start">
+        <p class="text-center"> Tenemos una oferta de ultimo moemnto para ti</p>
+    </div>
+
+    <div class="col-sm-4 text-center">
+      <h3>¿Dónde puedo reservar?</h3>
+      <p>Elige la ciudad que te interese y luego realiza la reserva con tus datos</p>
+    </div>
+
+    <div class="col-sm-4 text-end">
+
+        <h3>¿Cómo pago?</h3>
+        <p>Utiliza tu tarjeta favorita</p>
+
+    </div>
+  </div>
+
+  <hr>
+  <div class="text-center"><h1>Nuestros Principales destinos</h1></div>
+
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <!--La clase img-fluid es para que la imagen sea responsive-->
+        <img src="assets/Andalucia.jpg" class="d-block w-100 img-fluid" alt="hotel">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/Canarias3.jpg" class="d-block w-100  img-fluid" alt="hotel">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/Islasbaleares.jpg" class="d-block w-100  img-fluid" alt="hotel">
+      </div>
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  <hr>
+  <div class="text-center"><h1>Nuestras Ofertas del dia</h1></div>
+
+  <div class="d-flex flex-wrap mt-5">
+    <div class="card-hotel d-flex flex-column justify-content-between">
+
+      <img src="assets/barcelona.jpg" alt="hotel" class="card-img-top">
+
+      <div class="card-body text-start mt-3 mb-3">
+        <h3 class="card-title" data-bs-toggle="tooltip" data-placement="top" title="¡Las primeras reservas cuentan con clases de tango gratis!">Hotel Barcelona</h3>
+        <h6 class="card-subtitle text-muted mb-2">Cataluña</h6>
+
+        <p class="card-text">Hotel ubicado en pleno centro de Barcelona a pocos metros de la playa.</p>
+      </div>
+      <div class="botones d-flex">
+        <p><a class="btn btn-dark text-light btn-reserva" role="button" data-bs-toggle="popover" title="Promociones">Quiero reservar</a></p>
+        <p><a class="btn btn-dark btn-reserva" role="button" data-bs-toggle="modal" data-bs-target="#contacto">Contacto</a></p>
+        <p><a class="btn btn-info text-light" role="button" data-bs-toggle="modal" data-bs-target="#info-barna">Más info +</a></p>
+    </div>
+
+    </div>
+
+    <div class="card-hotel d-flex flex-column justify-content-between">
+
+      <img src="assets/Anda.jpg" alt="hotel" class="card-img-top">
+
+      <div class="card-body text-start mt-3 mb-3">
+        <h3 class="card-title">Hotel Andalucia</h3>
+        <h6 class="card-subtitle text-muted mb-2">Andalucia</h6>
+
+        <p class="card-text">Hotel ubicado en pleno centro de Malaga.</p>
+      </div>
+      <div class="botones d-flex">
+        <p><a class="btn btn-dark text-light btn-reserva" role="button">Quiero reservar</a></p>
+        <p><a class="btn btn-dark btn-reserva" role="button" data-bs-toggle="modal" data-bs-target="#contacto">Contacto</a></p>
+        <p><a class="btn btn-info text-light" role="button" data-bs-toggle="modal" data-bs-target="#info-buenosaires">Más info +</a></p>
+    </div>
+    </div>
+
+    <div class="card-hotel d-flex flex-column justify-content-between">
+
+      <img src="assets/Valencia.jpg" alt="hotel" class="card-img-top">
+
+      <div class="card-body text-start mt-3 mb-3">
+        <h3 class="card-title">Hotel Valencia <span class="badge bg-warning">New!</span></h3>
+        <h6 class="card-subtitle text-muted mb-2">Valencia</h6>
+
+        <p class="card-text">Hotel ubicado en pleno centro de Valencia.</p>
+      </div>
+      <div class="botones d-flex">
+        <p><a class="btn btn-dark text-light btn-reserva" role="button">Quiero reservar</a></p>
+        <p><a class="btn btn-dark btn-reserva" role="button" data-bs-toggle="modal" data-bs-target="#contacto">Contacto</a></p>
+        <p><a class="btn btn-info text-light" role="button" data-bs-toggle="modal" data-bs-target="#info-lima">Más info +</a></p>
+    </div>
+    </div>
+
+    <div class="card-hotel d-flex flex-column justify-content-between">
+
+      <img src="assets/Tene.jpg" alt="hotel" class="card-img-top">
+
+      <div class="card-body text-start mt-3 mb-3">
+        <h3 class="card-title">Hotel Tenerife <span class="badge bg-danger">¡Últimas Plazas!</span></h3>
+        <h6 class="card-subtitle text-muted mb-2">Islas Canarias</h6>
+
+        <p class="card-text">Hotel ubicado en pleno centro Santa cruz de Tenerife.</p>
+      </div>
+      <div class="botones d-flex">
+        <p><a class="btn btn-dark text-light btn-reserva" role="button">Quiero reservar</a></p>
+        <p><a class="btn btn-dark btn-reserva" role="button" data-bs-toggle="modal" data-bs-target="#contacto">Contacto</a></p>
+        <p><a class="btn btn-info text-light" role="button" data-bs-toggle="modal" data-bs-target="#info-lapaz">Más info +</a></p>
+
+    </div>
+    </div>
+
+    <div class="card-hotel d-flex flex-column justify-content-between">
+
+      <img src="assets/madrid.jpg" alt="hotel" class="card-img-top">
+
+      <div class="card-body text-start mt-3 mb-3">
+        <h3 class="card-title">Hotel Madrid</h3>
+        <h6 class="card-subtitle text-muted mb-2">España</h6>
+
+        <p class="card-text">Hotel ubicado en pleno centro de Madrid.</p>
+      </div>
+      <div class="botones d-flex">
+        <p><a class="btn btn-dark text-light btn-reserva" role="button">Quiero reservar</a></p>
+        <p><a class="btn btn-dark btn-reserva" role="button" data-bs-toggle="modal" data-bs-target="#contacto">Contacto</a></p>
+        <p><a class="btn btn-info text-light" role="button" data-bs-toggle="modal" data-bs-target="#info-madrid">Más info +</a></p>
+    </div>
+    </div>
+
+    <div class="card-hotel d-flex flex-column justify-content-between">
+
+      <img src="assets/donosti.jpg" alt="hotel" class="card-img-top">
+
+      <div class="card-body text-start mt-3 mb-3">
+        <h3 class="card-title">Hotel Donosti</h3>
+        <h6 class="card-subtitle text-muted mb-2">País Vasco</h6>
+
+        <p class="card-text">Hotel ubicado en pleno centro de Donostia.</p>
+      </div>
+      <div class="botones d-flex">
+        <p><a class="btn btn-dark text-light btn-reserva" role="button">Quiero reservar</a></p>
+        <p><a class="btn btn-dark btn-reserva" role="button" data-bs-toggle="modal" data-bs-target="#contacto">Contacto</a></p>
+        <p><a class="btn btn-info text-light" role="button" data-bs-toggle="modal" data-bs-target="#info-donosti">Más info +</a></p>
+    </div>
+
+    </div>
+    </div>
+
+    <div class="card-hotel d-flex flex-column justify-content-between">
+
+      <img src="assets/hotelibiza.jpg" alt="hotel" class="card-img-top">
+
+      <div class="card-body text-start mt-3 mb-3">
+        <h3 class="card-title">Hotel Ibiza</h3>
+        <h6 class="card-subtitle text-muted mb-2">Islas baleares</h6>
+
+        <p class="card-text">Hotel ubicado en pleno centro de Ibiza.</p>
+      </div>
+      <div class="botones d-flex">
+        <p><a class="btn btn-dark text-light btn-reserva" role="button">Quiero reservar</a></p>
+        <p><a class="btn btn-dark btn-reserva" role="button" data-bs-toggle="modal" data-bs-target="#contacto">Contacto</a></p>
+        <p><a class="btn btn-info text-light" role="button" data-bs-toggle="modal" data-bs-target="#info-rio">Más info +</a></p>
+      </div>
+    </div>
+
+  </div>
+
+<!-- ----------------------------------------------------------------------------- -->
+<!-- MODAL FORMULARIO DE CONTACTO CON EL HOTEL -->
+<!-- ----------------------------------------------------------------------------- -->
+
+<div class="modal fade" id="contacto" tabindex="-1" role="dialog" aria-labelledby="exampleModal" arial-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ayuda</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Tu email</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" clas="col-form-label">Mensaje: </label>
+            <textarea class="form-control" name="message-text" id="message-text" cols="30" rows="10"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success">Enviar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ----------------------------------------------------------------------------- -->
+<!-- INFORMACIÓN MODAL BARCELONA -->
+<!-- ----------------------------------------------------------------------------- -->
+
+<div class="modal fade" id="info-barna" tabindex="-1" role="dialog" aria-labelledby="exampleModal" arial-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Hotel Barcelona</h5>
+      <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="card card-body text-start">
+        <p><b>Estrellas:</b> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg></p>
+        <p><b>Distancia al centro:</b> 10m</p>
+        <p><b>Aire acondicionado:</b> Sí</p>
+        <p><b>Calefacción:</b> Sí</p>
+        <p><b>WiFi Gratuito:</b> Sí</p>
+        <p><a class="btn btn-dark text-light btn-reserva" role="button" data-bs-toggle="popover" title="Promociones">Quiero reservar</a></p>
+        <p><a class="btn btn-dark btn-reserva" role="button" data-bs-toggle="modal" data-bs-target="#contacto">Contacto</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ----------------------------------------------------------------------------- -->
+<!-- INFORMACIÓN MODAL ANDALUCIA-->
+<!-- ----------------------------------------------------------------------------- -->
+
+<div class="modal fade" id="info-buenosaires" tabindex="-1" role="dialog" aria-labelledby="exampleModal" arial-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Hotel Andalucia</h5>
+      <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="card card-body text-start">
+        <p><b>Estrellas:</b> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16">
+          <path d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z"/>
+        </svg></p>
+        <p><b>Distancia al centro:</b> 10m</p>
+        <p><b>Aire acondicionado:</b> Sí</p>
+        <p><b>Calefacción:</b> Sí</p>
+        <p><b>WiFi Gratuito:</b> Sí</p>
+        <p><a class="btn btn-dark text-light btn-reserva" role="button" data-bs-toggle="popover" title="Promociones">Quiero reservar</a></p>
+        <p><a class="btn btn-dark btn-reserva" role="button" data-bs-toggle="modal" data-bs-target="#contacto">Contacto</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ----------------------------------------------------------------------------- -->
+<!-- INFORMACIÓN MODAL VALENCIA -->
+<!-- ----------------------------------------------------------------------------- -->
+
+<div class="modal fade" id="info-lima" tabindex="-1" role="dialog" aria-labelledby="exampleModal" arial-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Hotel Valencia</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="card card-body text-start">
+          <p><b>Estrellas:</b> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+            <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+          </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+            <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+          </svg></p>
+          <p><b>Distancia al centro:</b> 100m</p>
+          <p><b>Aire acondicionado:</b> Sí</p>
+          <p><b>Calefacción:</b> No</p>
+          <p><b>WiFi Gratuito:</b> Sí</p>
+          <p><a class="btn btn-dark text-light btn-reserva" role="button" data-bs-toggle="popover" title="Promociones">Quiero reservar</a></p>
+          <p><a class="btn btn-dark btn-reserva" role="button" data-bs-toggle="modal" data-bs-target="#contacto">Contacto</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- ----------------------------------------------------------------------------- -->
+<!-- INFORMACIÓN MODAL TENERIFE -->
+<!-- ----------------------------------------------------------------------------- -->
+
+<div class="modal fade" id="info-lapaz" tabindex="-1" role="dialog" aria-labelledby="exampleModal" arial-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Hotel Tenerife</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="card card-body text-start">
+          <p><b>Estrellas:</b> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+            <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+          </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+            <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+          </svg></p>
+          <p><b>Distancia al centro:</b> 500m</p>
+          <p><b>Aire acondicionado:</b> Sí</p>
+          <p><b>Calefacción:</b> No</p>
+          <p><b>WiFi Gratuito:</b> Sí</p>
+          <p><a class="btn btn-dark text-light btn-reserva" role="button" data-bs-toggle="popover" title="Promociones">Quiero reservar</a></p>
+          <p><a class="btn btn-dark btn-reserva" role="button" data-bs-toggle="modal" data-bs-target="#contacto">Contacto</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ----------------------------------------------------------------------------- -->
+<!-- INFORMACIÓN MODAL MADRID -->
+<!-- ----------------------------------------------------------------------------- -->
+
+<div class="modal fade" id="info-madrid" tabindex="-1" role="dialog" aria-labelledby="exampleModal" arial-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Hotel Madrid</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="card card-body text-start">
+          <p><b>Estrellas:</b> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg></p>
+          <p><b>Distancia al centro:</b> 10m</p>
+          <p><b>Aire acondicionado:</b> Sí</p>
+          <p><b>Calefacción:</b> Sí</p>
+          <p><b>WiFi Gratuito:</b> Sí</p>
+          <p><a class="btn btn-dark text-light btn-reserva" role="button" data-bs-toggle="popover" title="Promociones">Quiero reservar</a></p>
+          <p><a class="btn btn-dark btn-reserva" role="button" data-bs-toggle="modal" data-bs-target="#contacto">Contacto</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ----------------------------------------------------------------------------- -->
+<!-- INFORMACIÓN MODAL DONOSTI -->
+<!-- ----------------------------------------------------------------------------- -->
+
+<div class="modal fade" id="info-donosti" tabindex="-1" role="dialog" aria-labelledby="exampleModal" arial-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Hotel Donosti</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="card card-body text-start">
+          <p><b>Estrellas:</b> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg></p>
+          <p><b>Distancia al centro:</b> 10m</p>
+          <p><b>Aire acondicionado:</b> Sí</p>
+          <p><b>Calefacción:</b> Sí</p>
+          <p><b>WiFi Gratuito:</b> Sí</p>
+          <p><a class="btn btn-dark text-light btn-reserva" role="button" data-bs-toggle="popover" title="Promociones">Quiero reservar</a></p>
+          <p><a class="btn btn-dark btn-reserva" role="button" data-bs-toggle="modal" data-bs-target="#contacto">Contacto</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ----------------------------------------------------------------------------- -->
+<!-- INFORMACIÓN MODAL IBIZA -->
+<!-- ----------------------------------------------------------------------------- -->
+
+<div class="modal fade" id="info-rio" tabindex="-1" role="dialog" aria-labelledby="exampleModal" arial-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Hotel Ibiza</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="card card-body text-start">
+          <p><b>Estrellas:</b> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg></p>
+          <p><b>Distancia al centro:</b> 10m</p>
+          <p><b>Aire acondicionado:</b> Sí</p>
+          <p><b>Calefacción:</b> Sí</p>
+          <p><b>WiFi Gratuito:</b> Sí</p>
+          <p><a class="btn btn-dark text-light btn-reserva" role="button" data-bs-toggle="popover" title="Promociones">Quiero reservar</a></p>
+          <p><a class="btn btn-dark btn-reserva" role="button" data-bs-toggle="modal" data-bs-target="#contacto">Contacto</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
