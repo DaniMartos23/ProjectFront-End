@@ -1,1 +1,4 @@
-<p>reservas works!</p>
+<div *ngFor="let reserva of reservas">
+  <app-data-cards [cardimage]="reserva.fecha_caducidad" [cardtitle]="reserva.titulo" [carddescription]="reserva.descripcion"></app-data-cards>
+
+</div>

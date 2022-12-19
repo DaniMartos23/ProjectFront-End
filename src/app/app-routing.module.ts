@@ -10,6 +10,9 @@ import { AboutComponent } from "./about/about.component";
 import { TermsComponent } from "./terms/terms.component";
 import { PrivacyComponent } from "./privacy/privacy.component";
 import { CrudHotelesModule } from './crud-hoteles/crud-hoteles.module';
+import { ChollosComponent } from './chollos/chollos.component';
+import { VuelosComponent } from './vuelos/vuelos.component';
+import { ViajesComponent } from './viajes/viajes.component';
 
 
 
@@ -21,7 +24,10 @@ const routes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: 'terms', component: TermsComponent},
   {path: 'privacy', component: PrivacyComponent},
-  {path: '**', pathMatch: 'full', redirectTo: 'home'}
+  {path: 'chollos', component: ChollosComponent},
+  {path: 'vuelos', component: VuelosComponent},
+  {path: 'viajes', component: ViajesComponent},
+  {path: '', pathMatch: 'full', redirectTo: 'home'}
 
 ];
 
