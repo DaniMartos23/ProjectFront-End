@@ -8,6 +8,8 @@ import { AuthService } from 'src/app/_services/auth.service';
 })
 export class RegisterComponent {
 
+  hide = true;
+
   form: any = {
     usuario: null,
     nombre: null,
@@ -23,6 +25,8 @@ export class RegisterComponent {
 
 
   onSubmit(){
+
+
     const{usuario,nombre,contrasena,email} = this.form;
 
     console.log()

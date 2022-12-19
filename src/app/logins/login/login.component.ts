@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Route, Router } from '@angular/router';
 import { AuthService } from 'src/app/_services/auth.service';
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
 
@@ -10,6 +12,9 @@ import { TokenStorageService } from 'src/app/_services/token-storage.service';
 
 
 export class LoginComponent implements OnInit {
+
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService,
+    public dialogRef: MatDialog, private router: Router){}
 
   form: any = {
     usuario: null,
@@ -23,8 +28,8 @@ export class LoginComponent implements OnInit {
 
   tokenData: string | null = null;
   userData: any;
+  hide = true;
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService){}
 
   ngOnInit(): void {
 
@@ -57,7 +62,7 @@ export class LoginComponent implements OnInit {
         this.userData = this.tokenStorage.getUser();
 
         this.datos();
-        //this.reloadPage();
+        window.location.reload();
 
       }
     );

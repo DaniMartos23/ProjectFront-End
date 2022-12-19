@@ -37,6 +37,10 @@ export class TokenStorageService {
     return{};
   }
 
+  public logout(): void {
+    localStorage.removeItem(USER_KEY);
+    localStorage.removeItem(TOKEN_KEY);
+  }
 
 
 }
