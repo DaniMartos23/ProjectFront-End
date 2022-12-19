@@ -19,9 +19,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatGridListModule } from '@angular/material/grid-list';
+import {MatSelectModule} from '@angular/material/select';
 
 // Componentes
 import { SpinnerComponent } from './spinner/spinner.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -32,6 +34,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
     CommonModule,
     MatSliderModule,
     MatTableModule,
+    MatDialogModule,
     MatPaginatorModule,
     MatSortModule,
     MatFormFieldModule,
@@ -44,6 +47,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
     MatProgressBarModule,
     MatGridListModule,
     ReactiveFormsModule,
+    MatSelectModule,
     HttpClientModule
   ],
   exports: [
@@ -55,6 +59,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
     MatInputModule,
     MatIconModule,
     MatTooltipModule,
+    MatDialogModule,
     MatButtonModule,
     MatCardModule,
     MatSnackBarModule,
@@ -62,6 +67,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
     MatProgressBarModule,
     MatGridListModule,
     ReactiveFormsModule,
+    MatSelectModule,
     HttpClientModule
   ]
 })

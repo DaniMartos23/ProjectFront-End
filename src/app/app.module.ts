@@ -26,6 +26,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { SharedModule } from './shared/shared.module';
+import { LoginComponent } from './logins/login/login.component';
+import { LoginsComponent } from './logins/logins.component';
+
 
 
 
@@ -41,6 +44,7 @@ import { SharedModule } from './shared/shared.module';
     PrivacyComponent,
     TermsComponent,
 
+
   ],
   imports: [
     BrowserModule,
@@ -55,6 +59,7 @@ import { SharedModule } from './shared/shared.module';
 
 
   ],
+  entryComponents: [LoginsComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

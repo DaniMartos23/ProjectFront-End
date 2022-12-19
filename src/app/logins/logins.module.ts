@@ -8,6 +8,7 @@ import { LoginsRoutingModule } from './logins-routing.module';
 import { UsuarioComponent } from './usuario/usuario.component';
 
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -17,17 +18,20 @@ import { FormsModule } from '@angular/forms';
     LoginsComponent,
     LoginComponent,
     RegisterComponent,
-    UsuarioComponent
+    UsuarioComponent,
+
   ],
   imports: [
     CommonModule,
     LoginsRoutingModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   exports:[
     LoginComponent,
     LoginsComponent,
     RegisterComponent
-  ]
+  ],
+
 })
 export class LoginsModule { }

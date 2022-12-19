@@ -1,4 +1,4 @@
-
+<!--
 <div class="login">
   <form name="form" method="post" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
     <h1>Login</h1>
@@ -22,4 +22,36 @@
 </div>
 
 <button (click)="datos()">Log in</button>
+-->
 
+<form name="form" method="post" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+
+  <mat-card-content class="d-flex flex-column bd-highlight mb-3">
+    <mat-form-field class="p-2 bd-highlight">
+    <mat-label>Usuario</mat-label>
+    <input name="usuario"
+    placeholder="usuario"
+    required="required"
+    [(ngModel)]="form.usuario"
+    #usuario="ngModel" matInput>
+  </mat-form-field>
+
+  <mat-form-field  class="p-2 bd-highlight">
+    <mat-label>Contraseña</mat-label>
+    <input matInput
+    [type]="hide ? 'password' : 'text'"
+    type="password"
+    name="contraseña"
+    placeholder="contraseña"
+    required="required"
+    [(ngModel)]="form.contrasena"
+    #contrasena="ngModel">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+
+
+  <button class="p-2 bd-highlight" mat-stroked-button type="submit">Entrar</button>
+  </mat-card-content>
+</form>
