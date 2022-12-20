@@ -1,4 +1,21 @@
-<div *ngFor="let chollo of chollos">
+<!--<div *ngFor="let chollo of chollos">
   <app-data-cards [cardimage]="chollo.fecha_caducidad" [cardtitle]="chollo.titulo" [carddescription]="chollo.descripcion"></app-data-cards>
 
+</div>-->
+
+<app-search-bar></app-search-bar>
+
+<!---->
+<div class="container">
+  <div class="row">
+    <div class="col-4">col-4</div>
+    <div class="col-8">
+
+    <div *ngFor="let chollo of chollos">
+      <app-data-cards [dataChollos]="chollo"></app-data-cards>
+    </div>
+
+    </div>
+  </div>
 </div>
+

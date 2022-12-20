@@ -29,6 +29,8 @@ import { SharedModule } from './shared/shared.module';
 import { LoginsComponent } from './logins/logins.component';
 import { authInterceptorProvider } from './_helper/auth-interceptor.service';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { RemoveBlankSpacePipe } from './pipes/remove-blank-space.pipe';
+import { DataCardsComponent } from './elements/data-cards/data-cards.component';
 
 
 
@@ -43,13 +45,10 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     ReservasComponent,
     AboutComponent,
     PrivacyComponent,
-    TermsComponent,
+    TermsComponent
 
-
-  ],
-  imports: [
+  ],imports: [
     BrowserModule,
-
     AppRoutingModule,
     ElementsModule,
     LoginsModule,
@@ -58,7 +57,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     FormsModule,
     MatSlideToggleModule,
     SharedModule
-  ],
+  ],exports:[],
 
   entryComponents: [LoginsComponent],
   providers: [authInterceptorProvider, { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],

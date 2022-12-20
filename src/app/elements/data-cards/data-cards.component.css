@@ -1,0 +1,28 @@
+.card-size{
+  margin-left: 25px;
+  margin-bottom: 15px;
+  border: 2px solid black;
+}
+
+.block {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #ddd;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+  }
+  .block:hover {
+    background-color: #04AA6D;;
+    color: black;
+  }
+  .hovernow {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .hovernow:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+  }
