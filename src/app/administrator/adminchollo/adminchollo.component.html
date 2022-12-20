@@ -2,22 +2,19 @@
 
 <div class="btn-group">
   <a class="btn btn-primary" (click)="mostrarmenu(1)">Crear chollo</a>
-  <a class="btn btn-primary" (click)="mostrarmenu(2)">Escoger chollos</a>
-  <a class="btn btn-primary" (click)="mostrarmenu(3)">Modificar chollo</a>
-  <a class="btn btn-primary" (click)="mostrarmenu(4)">Borrar chollo</a>
+  <a class="btn btn-primary" (click)="mostrarchollos()">Mostrar chollos</a>
+  <a class="btn btn-primary" (click)="mostrarmenu(3)">Buscar chollos</a>
+  <a class="btn btn-primary" (click)="mostrarmenu(4)">Modificar chollo</a>
+  <a class="btn btn-primary" (click)="mostrarmenu(5)">Borrar chollo</a>
 </div>
 
 <div class="m-1 p-3 border border-dark" *ngIf="menu == 1">
-  <form (ngSubmit)="onSubmit()">
+  <form (ngSubmit)="creachollos()">
     <div>
-      <label for="fechacaducidad"> Fecha caducidad </label>
-      <input
-        id="fechacaducidad"
-        type="date"
-        [(ngModel)]="form.fechacaducidad"
-        name="fechacaducidad"
-        #fechacaducidad="ngModel"
-      />
+      <label  for="fecha">
+        Fecha caducidad
+      </label>
+      <input id="fecha" type="date" [(ngModel)]="form.fecha" name="fecha" #fecha="ngModel">
     </div>
     <br />
     <div>
@@ -101,7 +98,22 @@
   </form>
 </div>
 
+
 <div class="m-1 p-3 border border-dark" *ngIf="menu == 2">
+  <div  *ngFor="let chollo of datos">
+      <div class="position-relative p-3">
+      <div>
+      <app-data-cards [dataChollos]="chollo"></app-data-cards>
+      </div>
+      <div class="position-absolute top-50 start-100 translate-middle">
+        <a class="btn btn-success btn-sm m-1">+</a>
+        <a class="btn btn-danger btn-sm m-1" (click)="eliminarchollo(chollo.id_chollo)">-</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="m-1 p-3 border border-dark" *ngIf="menu == 3">
   <form (ngSubmit)="buscachollo()">
     <div>
       <label for="busqueda"> Entra id del chollo </label>
@@ -118,8 +130,8 @@
   </form>
 </div>
 
-<div class="m-1 p-3 border border-dark" *ngIf="menu == 4">
-  <form (ngSubmit)="borrachollo()">
+<div class="m-1 p-3 border border-dark" *ngIf="menu == 5">
+  <form >
     <div>
       <label for="busqueda"> Entra id del chollo </label>
       <input
@@ -135,4 +147,3 @@
   </form>
 </div>
 <br />
-{{ datos }}
