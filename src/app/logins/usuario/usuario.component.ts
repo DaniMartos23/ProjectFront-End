@@ -4,6 +4,9 @@ import { usuario } from 'src/app/interfases/usuario';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
 import { EditarUsuarioComponent } from './editarUsuario/editar-usuario/editar-usuario.component';
+import Swal from 'sweetalert2'
+
+
 
 @Component({
   selector: 'app-usuario',
@@ -50,8 +53,30 @@ export class UsuarioComponent implements OnInit  {
 
   openOtherDialog(){
     this.EditDialog = !this.EditDialog;
+
   }
 
+  logout(){
+
+    Swal.fire({
+      title: 'Estas seguro?',
+      text: "deseas desconectarte?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'si, desconectarme'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      }
+    })
+
+  }
 
 
 }
