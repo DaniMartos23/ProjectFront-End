@@ -19,15 +19,16 @@ import { VuelosComponent } from './vuelos/vuelos.component';
 import { ViajesComponent } from './viajes/viajes.component';
 import { ReservasComponent } from './reservas/reservas.component';
 
-import { AddEditHotelsComponent } from './crud-hoteles/add-edit-hotels/add-edit-hotels.component';
-import { ListHotelsComponent } from './crud-hoteles/listhotels/listhotels.component';
+
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { SharedModule } from './shared/shared.module';
-import { LoginComponent } from './logins/login/login.component';
+
 import { LoginsComponent } from './logins/logins.component';
+import { authInterceptorProvider } from './_helper/auth-interceptor.service';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 
 
@@ -48,6 +49,7 @@ import { LoginsComponent } from './logins/logins.component';
   ],
   imports: [
     BrowserModule,
+
     AppRoutingModule,
     ElementsModule,
     LoginsModule,
@@ -56,11 +58,10 @@ import { LoginsComponent } from './logins/logins.component';
     FormsModule,
     MatSlideToggleModule,
     SharedModule
-
-
   ],
+
   entryComponents: [LoginsComponent],
-  providers: [],
+  providers: [authInterceptorProvider, { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

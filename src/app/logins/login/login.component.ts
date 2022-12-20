@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
 
         console.log(data);
         this.tokenStorage.saveToken(data.token);
-        this.tokenStorage.saveUser(data);
+        this.tokenStorage.saveUser(usuario);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
@@ -67,10 +67,6 @@ export class LoginComponent implements OnInit {
       }
     );
 
-  }
-
-  reloadPage(): void{
-    window.location.reload();
   }
 
   datos(){

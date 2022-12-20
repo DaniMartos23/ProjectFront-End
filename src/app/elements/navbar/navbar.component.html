@@ -28,8 +28,8 @@
 
         <button *ngIf="tokenData.getToken() == null" class="btn btn-outline-success" (click)="openDialog()">Entrar</button>
         <div *ngIf="tokenData.getToken() != null">
-        <button  class="btn btn-outline-success" >Mi perfil</button>
-        <button  class="btn btn-outline-success" (click)="tokenData.logout()">Desconectarse</button>
+        <a  class="btn btn-outline-success"  href="perfil">Mi perfil</a>
+        <a  class="btn btn-outline-success" (click)="tokenData.logout()">Desconectarse</a>
       </div>
 
     </div>
