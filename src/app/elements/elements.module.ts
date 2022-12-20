@@ -9,6 +9,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { DataCardsComponent } from './data-cards/data-cards.component';
 import { SharedModule } from '../shared/shared.module';
+import { RemoveBlankSpacePipe } from '../pipes/remove-blank-space.pipe';
 
 
 
@@ -19,7 +20,8 @@ import { SharedModule } from '../shared/shared.module';
     SidebarComponent,
     FooterComponent,
     SearchBarComponent,
-    DataCardsComponent
+    DataCardsComponent,
+    RemoveBlankSpacePipe
   ],
   imports: [
     CommonModule,

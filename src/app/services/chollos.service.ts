@@ -32,6 +32,7 @@ export class ChollosService {
 
   retornachollopais(pais:string):Observable<any>{
     return this.http.get(this.urlbase+'/'+pais);
+
   }
 
 
