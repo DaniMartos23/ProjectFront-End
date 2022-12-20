@@ -29,6 +29,8 @@ import { SharedModule } from './shared/shared.module';
 import { LoginsComponent } from './logins/logins.component';
 import { authInterceptorProvider } from './_helper/auth-interceptor.service';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { TestServiciosComponent } from './test-servicios/test-servicios.component';
+import { AdministratorModule } from './administrator/administrator.module';
 
 
 
@@ -44,12 +46,13 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     AboutComponent,
     PrivacyComponent,
     TermsComponent,
+    TestServiciosComponent,
 
 
   ],
   imports: [
     BrowserModule,
-
+    AdministratorModule,
     AppRoutingModule,
     ElementsModule,
     LoginsModule,

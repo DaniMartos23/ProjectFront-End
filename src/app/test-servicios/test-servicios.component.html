@@ -1,0 +1,202 @@
+<p>Chollos!</p>
+<div class="btn-group">
+  <a class="btn btn-primary" (click)="mostrarcrear()">Crear chollo</a>
+  <a class="btn btn-primary" (click)="seleccionarchollos()">Escoger chollos</a>
+  <a  class="btn btn-primary">Modificar chollo</a>
+  <a  class="btn btn-primary"(click)="borrarchollo()">Borrar chollo</a>
+</div>
+<br>
+<p>Viajes</p>
+<div class="btn-group">
+  <a  class="btn btn-primary">Crear chollo</a>
+  <a  class="btn btn-primary">Escoger chollos</a>
+  <a  class="btn btn-primary">Modificar chollo</a>
+  <a  class="btn btn-primary">Borrar chollo</a>
+</div>
+<br>
+<p>Vuelos</p>
+<div class="btn-group">
+  <a  class="btn btn-primary">Crear chollo</a>
+  <a  class="btn btn-primary">Escoger chollos</a>
+  <a  class="btn btn-primary">Modificar chollo</a>
+  <a  class="btn btn-primary">Borrar chollo</a>
+</div>
+<br>
+<p>Hoteles</p>
+<div class="btn-group">
+  <a class="btn btn-primary" (click)="mostrarcrearhotel()">Crear hoteles</a>
+  <a class="btn btn-primary">Escoger chollos</a>
+  <a class="btn btn-primary">Modificar chollo</a>
+  <a class="btn btn-primary"(click)="borrahoteles()">Borrar Hoteles</a>
+</div>
+<br>
+<br>
+<div *ngIf="crearchollos==true">
+  <form (ngSubmit)="onSubmit()">
+
+    <div>
+      <label  for="fechacaducidad">
+        Fecha caducidad
+      </label>
+      <input id="fechacaducidad" type="date" [(ngModel)]="form.fechacaducidad" name="fechacaducidad" #fechacaducidad="ngModel">
+    </div>
+    <br>
+    <div>
+      <label for="titulo">
+        titulo
+      </label>
+      <input id="titulo" type="text" [(ngModel)]="form.titulo" name="titulo" #titulo="ngModel">
+    </div>
+    <br>
+    <div>
+      <label for="precio">
+        precio
+      </label>
+      <input id="precio" type="text" [(ngModel)]="form.precio" name="precio" #precio="ngModel">
+    </div>
+    <br>
+    <div>
+      <label for="descripcion">
+        descripcion
+      </label>
+      <input id="descripcion" type="text" [(ngModel)]="form.descripcion" name="descripcion" #descripcion="ngModel">
+    </div>
+    <br>
+    <div>
+      <label for="valoracion">
+        valoracion
+      </label>
+      <input id="valoracion" type="text" [(ngModel)]="form.valoracion" name="valoracion" #valoracion="ngModel">
+    </div>
+    <br>
+    <div>
+      <label for="unidades">
+        unidades
+      </label>
+      <input id="unidades" type="text" [(ngModel)]="form.unidades" name="unidades" #unidades="ngModel">
+    </div>
+    <br>
+    <div>
+      <label for="image_url">
+        image url
+      </label>
+      <input id="image_url" type="text" [(ngModel)]="form.image_url" name="image_url" #image_url="ngModel">
+    </div>
+    <br>
+    <div>
+      <label for="viajes">
+        ID_viaje
+      </label>
+      <input id="viajes" type="text" [(ngModel)]="form.viajes" name="viajes" #viajes="ngModel">
+    </div>
+    <br>
+    <button class="button" type="submit">Crear</button>
+
+  </form>
+</div>
+
+<div *ngIf="modificarchollos==true">
+
+</div>
+
+<div *ngIf="borrarchollos==true">
+
+</div>
+
+<div *ngIf="crearviajes==true">
+
+</div>
+
+<div *ngIf="modificarviajes==true">
+
+</div>
+
+<div *ngIf="borrarviajes==true">
+
+</div>
+
+<div *ngIf="crearvuelos==true">
+
+</div>
+
+<div *ngIf="modificarvuelos==true">
+
+</div>
+
+<div *ngIf="borrarvuelos==true">
+
+</div>
+
+<div *ngIf="crearhoteles==true">
+  <form (ngSubmit)="onSubmit2()">
+
+    <div>
+      <label  for="nombre">
+        nombre
+      </label>
+      <input id="nombre" type="text" [(ngModel)]="form.nombre" name="nombre" #nombre="ngModel">
+    </div>
+    <br>
+    <div>
+      <label for="direccion">
+        direccion
+      </label>
+      <input id="direccion" type="text" [(ngModel)]="form.direccion" name="direccion" #direccion="ngModel">
+    </div>
+    <br>
+    <div>
+      <label for="descripcion">
+        descripcion
+      </label>
+      <input id="descripcion" type="text" [(ngModel)]="form.descripcion" name="descripcion" #descripcion="ngModel">
+    </div>
+    <br>
+    <div>
+      <label for="localidad">
+        localidad
+      </label>
+      <input id="localidad" type="text" [(ngModel)]="form.localidad" name="localidad" #localidad="ngModel">
+    </div>
+    <br>
+    <div>
+      <label for="estrellas">
+        estrellas
+      </label>
+      <input id="estrellas" type="text" [(ngModel)]="form.estrellas" name="estrellas" #estrellas="ngModel">
+    </div>
+    <br>
+    <div>
+      <label for="tipo_habitaciones">
+        tipo_habitaciones
+      </label>
+      <input id="tipo_habitaciones" type="text" [(ngModel)]="form.tipo_habitaciones" name="tipo_habitaciones" #tipo_habitaciones="ngModel">
+    </div>
+    <br>
+    <div>
+      <label for="mascotas">
+        mascotas
+      </label>
+      <input id="mascotas" type="text" [(ngModel)]="form.mascotas" name="mascotas" #mascotas="ngModel">
+    </div>
+    <br>
+    <div>
+      <label for="tipo_pension">
+        tipo_pension
+      </label>
+      <input id="tipo_pension" type="text" [(ngModel)]="form.tipo_pension" name="tipo_pension" #tipo_pension="ngModel">
+    </div>
+    <br>
+    <button class="button" type="submit">Crear</button>
+
+  </form>
+</div>
+
+<div *ngIf="modificarhoteles==true">
+
+</div>
+
+<div *ngIf="borrarhoteles==true">
+
+</div>
+<br>
+<p>{{datos|json}}</p>
