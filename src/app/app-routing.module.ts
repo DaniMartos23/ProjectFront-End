@@ -15,6 +15,7 @@ import { VuelosComponent } from './vuelos/vuelos.component';
 import { ViajesComponent } from './viajes/viajes.component';
 import { UsuarioComponent } from './logins/usuario/usuario.component';
 import { LoginWardGuard } from './_guards/login-ward.guard';
+import { AdministratorComponent } from './administrator/administrator.component';
 
 
 
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path: 'vuelos', component: VuelosComponent},
   {path: 'perfil',canActivate: [LoginWardGuard], component: UsuarioComponent},
   {path: 'viajes',component: ViajesComponent},
+  {path: 'administrator',component: AdministratorComponent},
   {path: '', pathMatch: 'full', redirectTo: 'home'}
 
 ];
