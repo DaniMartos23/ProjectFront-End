@@ -13,6 +13,8 @@ import { CrudHotelesModule } from './crud-hoteles/crud-hoteles.module';
 import { ChollosComponent } from './chollos/chollos.component';
 import { VuelosComponent } from './vuelos/vuelos.component';
 import { ViajesComponent } from './viajes/viajes.component';
+import { UsuarioComponent } from './logins/usuario/usuario.component';
+import { LoginWardGuard } from './_guards/login-ward.guard';
 
 
 
@@ -26,7 +28,8 @@ const routes: Routes = [
   {path: 'privacy', component: PrivacyComponent},
   {path: 'chollos', component: ChollosComponent},
   {path: 'vuelos', component: VuelosComponent},
-  {path: 'viajes', component: ViajesComponent},
+  {path: 'perfil',canActivate: [LoginWardGuard], component: UsuarioComponent},
+  {path: 'viajes',component: ViajesComponent},
   {path: '', pathMatch: 'full', redirectTo: 'home'}
 
 ];

@@ -1,0 +1,88 @@
+<mat-card >
+  <form name="form" method="post" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate >
+    <mat-card-header>
+      <mat-card-title>Editar Perfil</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="d-flex flex-column bd-highlight mb-3">
+    <mat-form-field  class="p-2">
+      <mat-label>Usuario</mat-label>
+      <input name="usuario"
+      placeholder="usuario"
+      required="required"
+      [(ngModel)]="form.usuario"
+      #usuario="ngModel"
+       matInput>
+      <mat-error *ngIf="usuario.invalid">"Introduce un valor valido"</mat-error>
+    </mat-form-field>
+
+  <mat-form-field class="p-2">
+  <mat-label>Nombre</mat-label>
+  <input name="nombre"
+  placeholder="nombre"
+  required="required"
+  [(ngModel)]="form.nombre"
+  #nombre="ngModel" matInput [value]="userData.nombre">
+  <mat-error *ngIf="nombre.invalid">"Introduce un valor valido"</mat-error>
+</mat-form-field>
+
+
+
+  <mat-form-field class="p-2">
+  <mat-label>Apellidos</mat-label>
+  <input name="apellidos"
+  placeholder="apellidos"
+  [(ngModel)]="form.apellidos"
+  #apellidos="ngModel" matInput>
+  <mat-error *ngIf="apellidos.invalid">"Introduce un valor valido"</mat-error>
+</mat-form-field>
+
+
+  <mat-form-field  class="p-2">
+    <mat-label>Email</mat-label>
+    <input type="correo"
+    name="correo"
+    placeholder="correo"
+    required="required"
+    [(ngModel)]="form.correo"
+    #correo="ngModel" matInput>
+    <mat-error *ngIf="correo.invalid">"Introduce un valor valido"</mat-error>
+  </mat-form-field>
+
+
+
+    <mat-form-field class="p-2">
+    <mat-label>Ciudad</mat-label>
+    <input name="ciudad"
+    placeholder="ciudad"
+    [(ngModel)]="form.ciudad"
+    #ciudad="ngModel" matInput>
+  </mat-form-field>
+
+  <mat-form-field class="p-2">
+    <mat-label>URL imagen de perfil</mat-label>
+    <input name="fotoPerfil"
+    placeholder="fotoPerfil"
+    [(ngModel)]="form.fotoPerfil"
+    #fotoPerfil="ngModel" matInput>
+  </mat-form-field>
+
+
+  <mat-form-field class="p-2">
+    <mat-label>Fecha de nacimiento</mat-label>
+    <input matInput [matDatepicker]="picker"
+    name="fechaNacimiento"
+    placeholder="fechaNacimiento"
+    [(ngModel)]="form.fechaNacimiento"
+    #fechaNacimiento="ngModel" matInput>
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <button class="p-2 bd-highlight" mat-stroked-button type="submit">Actualizar</button>
+    </mat-card-content>
+
+
+
+</form>
+</mat-card>

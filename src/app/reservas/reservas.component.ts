@@ -13,6 +13,9 @@ export class ReservasComponent {
 
   ngOnInit(){
     this.servicioreservas.retornarreservas()
-      .subscribe(result =>this.reservas=result)
+      .subscribe(result => {
+        this.reservas = result
+        console.log(result)
+      })
   }
 }

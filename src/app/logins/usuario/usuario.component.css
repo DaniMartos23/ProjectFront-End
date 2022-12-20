@@ -1,3 +1,4 @@
+/*
 body{
   background: #eee;
 }
@@ -34,7 +35,24 @@ hr.h-color{
 #side_nav.active{
   margin-left: 0;
 }
+}*/
+
+.box {
+  border: 1px solid #000;
+  height: 500px;
+  /*background-color: aqua;*/
+
 }
 
+.center{
+  margin-top: 40px;
+}
+
+
+
+.box-lg {
+  height: 500px;
+  background-color: rgb(213, 31, 31);
+}
 
 

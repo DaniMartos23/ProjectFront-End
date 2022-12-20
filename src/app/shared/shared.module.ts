@@ -20,10 +20,12 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatGridListModule } from '@angular/material/grid-list';
 import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 // Componentes
 import { SpinnerComponent } from './spinner/spinner.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -33,6 +35,8 @@ import { MatDialogModule } from '@angular/material/dialog';
   imports: [
     CommonModule,
     MatSliderModule,
+    MatDatepickerModule,
+    MatNativeDateModule ,
     MatTableModule,
     MatDialogModule,
     MatPaginatorModule,
@@ -53,6 +57,8 @@ import { MatDialogModule } from '@angular/material/dialog';
   exports: [
     MatSliderModule,
     MatTableModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
     MatPaginatorModule,
     MatSortModule,
     MatFormFieldModule,
@@ -69,6 +75,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     ReactiveFormsModule,
     MatSelectModule,
     HttpClientModule
-  ]
+  ],
+  providers: [
+    MatDatepickerModule,
+  ],
 })
 export class SharedModule { }
