@@ -1,3 +1,4 @@
+
 import { Component, Input, OnInit  } from '@angular/core';
 
 @Component({
@@ -6,17 +7,12 @@ import { Component, Input, OnInit  } from '@angular/core';
   styleUrls: ['./data-cards.component.css']
 })
 export class DataCardsComponent implements OnInit {
-    @Input() cardimage:any;
-    @Input() carddescription:any;
-    @Input() cardtitle:any;
+    @Input() dataChollos:any;
 
-    constructor(){
-      this.cardimage='';
-      this.carddescription='';
-      this.cardtitle='';
-    }
+    constructor(){}
+
 
     ngOnInit(): void {
-
+      console.log(this.dataChollos)
     }
 }
