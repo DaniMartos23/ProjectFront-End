@@ -19,7 +19,7 @@
       <br>
       <p class="card-text"><small class="text-muted">{{dataChollos.valoracion}} / 5 estrellas</small></p>
 
-      <button class="p-2 bd-highlight block" mat-stroked-button type="button" data-bs-toggle="collapse"  [attr.data-bs-target]="'#'+dataChollos.titulo | removeBlankSpace" aria-expanded="false" [attr.aria-controls]="dataChollos.titulo | removeBlankSpace">Más información</button>
+      <button class="p-2 bd-highlight reservar-button" mat-stroked-button type="button" data-bs-toggle="collapse"  [attr.data-bs-target]="'#'+dataChollos.titulo | removeBlankSpace" aria-expanded="false" [attr.aria-controls]="dataChollos.titulo | removeBlankSpace">Más información</button>
       <p></p>
         <div class="collapse" id="{{dataChollos.titulo | removeBlankSpace}}">
 
@@ -47,7 +47,8 @@
          </div>
 
          <br>
-         <button class="p-2 bd-highlight block" mat-stroked-button type="button" >Reservar ahora</button>
+         <button *ngIf="isReserva == false" class="p-2 bd-highlight reservar-button" mat-stroked-button type="button" (click)="reservar(dataChollos.id_chollo)" >Reservar ahora</button>
+         <button *ngIf="isReserva == true" class="p-2 bd-highlight eliminar-button" mat-stroked-button type="button" (click)="eliminarReserva()" >Eliminar Reserva</button>
       </div>
 
 

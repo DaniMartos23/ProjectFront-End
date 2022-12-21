@@ -50,10 +50,8 @@ import { DataCardsComponent } from './elements/data-cards/data-cards.component';
     ReservasComponent,
     AboutComponent,
     PrivacyComponent,
-
     TermsComponent,
     TestServiciosComponent,
-
     TermsComponent
 
 
