@@ -13,6 +13,9 @@ export class ChollosComponent implements OnInit{
 
   ngOnInit(){
     this.serviciochollos.retornarchollos()
-      .subscribe(result =>this.chollos=result)
+      .subscribe(result =>{
+        this.chollos= result
+      console.log(this.chollos)
+  });
   }
 }

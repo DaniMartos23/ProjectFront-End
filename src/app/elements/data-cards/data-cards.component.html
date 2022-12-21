@@ -1,8 +1,60 @@
-<div class="card" style="width: 18rem;">
+<!--<div class="card" style="width: 18rem;">
     <img src="{{cardimage}}" class="card-img-top" >
     <div class="card-body">
       <h1 class="card-title">{{cardtitle}}</h1>
       <p class="card-text">{{carddescription}}</p>
     </div>
+  </div>-->
+
+
+  <div class="card card-size hovernow">
+    <img src="{{dataChollos.image_url}}" class="card-img-top" height="300">
+      <h3 class="card-header text-end">Fecha de caducidad: {{dataChollos.fecha}}</h3>
+    <div class="card-body">
+      <h1 class="card-title"><strong>{{dataChollos.titulo}}</strong></h1>
+      <h2 class="card-title"><i>{{dataChollos.viajes.destino}}</i></h2>
+      <p class="card-text">{{dataChollos.descripcion}}</p>
+      <strong>Origen del vuelo:</strong>  {{dataChollos.viajes.origen}} <br>
+      <strong>Destino del vuelo:</strong> {{dataChollos.viajes.destino}} <br>
+      <br>
+      <p class="card-text"><small class="text-muted">{{dataChollos.valoracion}} / 5 estrellas</small></p>
+
+      <button class="p-2 bd-highlight reservar-button" mat-stroked-button type="button" data-bs-toggle="collapse"  [attr.data-bs-target]="'#'+dataChollos.titulo | removeBlankSpace" aria-expanded="false" [attr.aria-controls]="dataChollos.titulo | removeBlankSpace">Más información</button>
+      <p></p>
+        <div class="collapse" id="{{dataChollos.titulo | removeBlankSpace}}">
+
+          <div>
+         <h2 class="card-title"><strong>información del vuelo</strong></h2>
+         <strong>Aereolinea:</strong> {{dataChollos.viajes.vuelos.aerolinea}} <br>
+         <strong>Escalas:</strong> {{dataChollos.viajes.vuelos.escalas}} <br>
+         <strong>Tipo de asiento:</strong> {{dataChollos.viajes.vuelos.tipoAsiento}} <br>
+        </div>
+
+        <hr>
+
+        <div>
+          <h2 class="card-title"><strong>información del hotel</strong></h2>
+          <strong>Nombre:</strong> {{dataChollos.viajes.hotel.nombre}} <br>
+          <strong>Descripción:</strong> {{dataChollos.viajes.hotel.descripcion}} <br>
+          <strong>Dirección:</strong> {{dataChollos.viajes.hotel.direccion}} <br>
+          <strong>Localidad:</strong> {{dataChollos.viajes.hotel.localidad}} <br>
+          <strong>Estrellas:</strong> {{dataChollos.viajes.hotel.estrellas}} <br>
+          <strong>Tipo de habitación:</strong> {{dataChollos.viajes.hotel.tipo_habitaciones}} <br>
+          <strong>Tipo de pensión:</strong> {{dataChollos.viajes.hotel.tipo_pension}} <br>
+          <strong>Mascotas:</strong>
+           <span *ngIf="dataChollos.viajes.hotel.mascotas == true"> Mascotas permitidas</span>
+           <span *ngIf="dataChollos.viajes.hotel.mascotas == false"> Mascotas no permitidas</span><br>
+         </div>
+
+         <br>
+         <button *ngIf="isReserva == false" class="p-2 bd-highlight reservar-button" mat-stroked-button type="button" (click)="reservar(dataChollos.id_chollo)" >Reservar ahora</button>
+         <button *ngIf="isReserva == true" class="p-2 bd-highlight eliminar-button" mat-stroked-button type="button" (click)="eliminarReserva()" >Eliminar Reserva</button>
+      </div>
+
+
+
+
+    </div>
   </div>
+
 

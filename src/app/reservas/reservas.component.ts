@@ -12,7 +12,7 @@ export class ReservasComponent {
   constructor(private servicioreservas: ReservasService){}
 
   ngOnInit(){
-    this.servicioreservas.retornarreservas()
+    this.servicioreservas.retornarReservasUsuario()
       .subscribe(result => {
         this.reservas = result
         console.log(result)

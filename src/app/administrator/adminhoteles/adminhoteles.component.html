@@ -1,0 +1,138 @@
+<h1>Hoteles</h1>
+
+<div class="btn-group">
+  <a class="btn btn-primary" (click)="mostrarmenu(1)">Crear hotel</a>
+  <a class="btn btn-primary" (click)="mostrarmenu(2)">Escoger hotel</a>
+  <a class="btn btn-primary" (click)="mostrarmenu(3)">Modificar hotel</a>
+  <a class="btn btn-primary" (click)="mostrarmenu(4)">Borrar hotel</a>
+</div>
+
+<div class="m-1 p-3 border border-dark" *ngIf="menu == 1">
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label  class="form-label" for="nombre"> Nombre </label>
+      <input  class="form-control"
+        id="nombre"
+        type="text"
+        [(ngModel)]="form.nombre"
+        name="nombre"
+        #nombre="ngModel"
+      />
+    </div>
+    <br />
+    <div>
+      <label for="direccion"> Direccion </label>
+      <input class="form-control"
+        id="direccion"
+        type="text"
+        [(ngModel)]="form.direccion"
+        name="direccion"
+        #direccion="ngModel"
+      />
+    </div>
+    <br />
+    <div>
+      <label for="descripcion"> Descripcion </label>
+      <input class="form-control"
+        id="descripcion"
+        type="text"
+        [(ngModel)]="form.descripcion"
+        name="descripcion"
+        #descripcion="ngModel"
+      />
+    </div>
+    <br />
+    <div>
+      <label for="localidad"> Localidad </label>
+      <input class="form-control"
+        id="localidad"
+        type="text"
+        [(ngModel)]="form.localidad"
+        name="localidad"
+        #localidad="ngModel"
+      />
+    </div>
+    <br />
+    <div>
+      <label for="estrellas"> Estrellas </label>
+      <input class="form-control"
+        id="estrellas"
+        type="text"
+        [(ngModel)]="form.estrellas"
+        name="estrellas"
+        #estrellas="ngModel"
+      />
+    </div>
+    <br />
+    <div>
+      <label for="tipo_habitaciones"> Tipo de habitaciones </label>
+      <input class="form-control"
+        id="tipo_habitaciones"
+        type="text"
+        [(ngModel)]="form.tipo_habitaciones"
+        name="tipo_habitaciones"
+        #tipo_habitaciones="ngModel"
+      />
+    </div>
+    <br />
+    <div>
+      <label for="mascotas"> Permitido mascotas </label>
+      <input class="form-control"
+        id="mascotas"
+        type="text"
+        [(ngModel)]="form.mascotas"
+        name="mascotas"
+        #mascotas="ngModel"
+      />
+    </div>
+    <br />
+    <div>
+      <label for="tipo_pension"> Tipo de pensión </label>
+      <input class="form-control"
+        id="tipo_pension"
+        type="text"
+        [(ngModel)]="form.tipo_pension"
+        name="tipo_pension"
+        #tipo_pension="ngModel"
+      />
+    </div>
+    <br />
+    <button class="button" type="submit">Crear</button>
+  </form>
+</div>
+
+<div class="m-1 p-3 border border-dark" *ngIf="menu == 2">
+  <form (ngSubmit)="buscahotel()">
+    <div>
+      <label for="busqueda"> Entra id del chollo </label>
+      <input
+        id="busqueda"
+        type="text"
+        [(ngModel)]="id"
+        name="busqueda"
+        #busqueda="ngModel"
+      />
+    </div>
+    <br />
+    <button class="button" type="submit">Buscar</button>
+  </form>
+</div>
+
+<div class="m-1 p-3 border border-dark" *ngIf="menu == 4">
+  <form (ngSubmit)="borrahotel()">
+    <div>
+      <label for="busqueda"> Entra id del chollo </label>
+      <input
+        id="busqueda"
+        type="text"
+        [(ngModel)]="id"
+        name="busqueda"
+        #busqueda="ngModel"
+      />
+    </div>
+    <br />
+    <button class="button" type="submit">Borrar</button>
+  </form>
+</div>
+<br />
+{{ datos }}

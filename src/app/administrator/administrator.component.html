@@ -1,0 +1,74 @@
+<h1 class="d-flex justify-content-center">Herramientas Administrador</h1>
+<div class="d-flex justify-content-center" *ngIf="editor == 0">
+  <div class="d-grid gap-6 col-2">
+    <button class="btn btn-primary" type="button" (click)="cambiaeditor(1)">
+      Chollos
+    </button>
+    <button class="btn btn-primary" type="button" (click)="cambiaeditor(2)">
+      Vuelos
+    </button>
+  </div>
+  <div class="d-grid gap-6 col-2">
+    <button class="btn btn-primary" type="button" (click)="cambiaeditor(3)">
+      Viajes
+    </button>
+    <button class="btn btn-primary" type="button" (click)="cambiaeditor(4)">
+      Hoteles
+    </button>
+  </div>
+</div>
+<div
+  class="d-flex flex-column mb-2 align-content-center flex-wrap"
+  *ngIf="editor == 1"
+>
+  <div>
+    <app-adminchollo></app-adminchollo>
+  </div>
+  <div>
+    <button class="btn btn-primary" type="button" (click)="cambiaeditor(0)">
+      Atras
+    </button>
+  </div>
+</div>
+
+<div
+  class="d-flex flex-column mb-2 align-content-center flex-wrap"
+  *ngIf="editor == 2"
+>
+  <div>
+    <app-adminvuelos></app-adminvuelos>
+  </div>
+  <div>
+    <button class="btn btn-primary" type="button" (click)="cambiaeditor(0)">
+      Atras
+    </button>
+  </div>
+</div>
+
+<div
+  class="d-flex flex-column mb-2 align-content-center flex-wrap"
+  *ngIf="editor == 3"
+>
+  <div>
+    <app-adminviajes></app-adminviajes>
+  </div>
+  <div>
+    <button class="btn btn-primary" type="button" (click)="cambiaeditor(0)">
+      Atras
+    </button>
+  </div>
+</div>
+
+<div
+  class="d-flex flex-column mb-2 align-content-center flex-wrap"
+  *ngIf="editor == 4"
+>
+  <div>
+    <app-adminhoteles></app-adminhoteles>
+  </div>
+  <div>
+    <button class="btn btn-primary" type="button" (click)="cambiaeditor(0)">
+      Atras
+    </button>
+  </div>
+</div>

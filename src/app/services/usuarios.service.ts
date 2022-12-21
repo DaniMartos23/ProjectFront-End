@@ -16,7 +16,6 @@ export class UsuariosService implements OnInit  {
 
   retornarUsuario(): Observable<any>{
     this.usuario = this.tokenData.getUser();
-    console.log(this.usuario);
     return this.http.get("https://projectback-end-production-59f5.up.railway.app/api/usuarios/perfil/"+this.usuario);
   }
 

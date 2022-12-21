@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { EditarUsuarioComponent } from './usuario/editarUsuario/editar-usuario/editar-usuario.component';
 import { AppModule } from "../app.module";
+import { ElementsModule } from '../elements/elements.module';
 
 
 
@@ -23,7 +24,8 @@ import { AppModule } from "../app.module";
         LoginComponent,
         RegisterComponent,
         UsuarioComponent,
-        EditarUsuarioComponent
+        EditarUsuarioComponent,
+
     ],
     exports: [
         LoginComponent,
@@ -34,7 +36,8 @@ import { AppModule } from "../app.module";
         CommonModule,
         LoginsRoutingModule,
         FormsModule,
-        SharedModule
+        SharedModule,
+        ElementsModule
     ]
 })
 export class LoginsModule { }
