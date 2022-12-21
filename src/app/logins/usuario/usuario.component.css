@@ -37,17 +37,52 @@ hr.h-color{
 }
 }*/
 
-.box {
-  border: 1px solid #000;
-  height: 500px;
-  /*background-color: aqua;*/
 
+
+.margins{
+  margin-top: 120px;
+  margin-left: 20px
 }
 
-.center{
-  margin-top: 40px;
+.margins-reservas{
+  margin-top: 35px;
 }
 
+.custom-card{
+width: 410px;
+height: auto;
+}
 
+.img-center {margin:0 auto;}
+
+.reservar-button {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: #ddd;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+.reservar-button:hover {
+  background-color: #04AA6D;;
+  color: black;
+}
+
+.eliminar-button {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: #ddd;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+.eliminar-button:hover {
+  background-color: #d71111;;
+  color: black;
+}
 
 

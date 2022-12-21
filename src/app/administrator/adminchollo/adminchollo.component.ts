@@ -51,23 +51,17 @@ export class AdmincholloComponent {
         console.log(this.Usuario)
 
 
-    this.datos=this.form;
-    this.form.viajes=this.Viajes
-    this.form.usuario=this.Usuario
-    console.log(this.form)
+            this.datos=this.form;
+            this.form.viajes=this.Viajes
+            this.form.usuario=this.Usuario
+            console.log(this.form)
 
-    this.serviciochollos.crearchollo(this.form)
-    .subscribe(result =>this.datos=result)
-    this.menu=0;
+            this.serviciochollos.crearchollo(this.form)
+            .subscribe(result =>this.datos=result)
+            this.menu=0;
       })
 
-
-
     })
-
-
-
-
 
   }
 

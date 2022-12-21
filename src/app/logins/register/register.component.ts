@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { AuthService } from 'src/app/_services/auth.service';
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
+import Swal from 'sweetalert2';
 
 
 const IMG = "https://www.pngitem.com/pimgs/m/35-350426_profile-icon-png-default-profile-picture-png-transparent.png";
@@ -27,7 +29,7 @@ export class RegisterComponent {
   isSingUpFailed = false;
   errorMessage = '';
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService){}
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService, public dialogRef: MatDialogRef<RegisterComponent>){}
 
 
   onSubmit(){
@@ -46,7 +48,21 @@ export class RegisterComponent {
 
           this.tokenStorage.saveToken(data.token);
           this.tokenStorage.saveUser(usuario);
-          window.location.reload();
+
+
+
+          Swal.fire({
+            position: 'bottom-end',
+            icon: 'success',
+            title: 'Te has registrado correctamente',
+            showConfirmButton: false,
+            timer: 1500
+          })
+
+              this.dialogRef.close();
+
+
+
         });
       }
     );
