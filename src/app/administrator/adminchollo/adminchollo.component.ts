@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { async } from 'rxjs';
 import { ChollosService } from 'src/app/services/chollos.service';
 import { GeneralesService } from 'src/app/services/generales.service';
 import { UsuariosService } from 'src/app/services/usuarios.service';
+import { TokenStorageService } from 'src/app/_services/token-storage.service';
 
 @Component({
   selector: 'app-adminchollo',
@@ -9,11 +11,11 @@ import { UsuariosService } from 'src/app/services/usuarios.service';
   styleUrls: ['./adminchollo.component.css']
 })
 export class AdmincholloComponent {
-  menu:number=1;
-  datos:any;
-  id:any;
+  menu: number = 1;
+  datos: any;
+  id: any;
   form: any = {
-    fechacaducidad: null,
+    fecha: null,
     titulo: null,
     precio: null,
     descripcion: null,
@@ -21,40 +23,74 @@ export class AdmincholloComponent {
     unidades: null,
     image_url:null,
     viajes: null,
-    usuario:{ id :null}
+    usuario:null
+  }
+  Usuario:any={
+    id :null
   }
 
-  constructor(private serviciochollos: ChollosService,  private serviciosgenerales: GeneralesService,private usuariosservice:UsuariosService){}
+  Viajes:any={
+    id :null
+  }
 
-  onSubmit(){
+
+  constructor(private serviciochollos: ChollosService, private serviciosgenerales: GeneralesService, private usuariosservice: UsuariosService, private tokenstorage: TokenStorageService) { }
+
+  async creachollos() {
 
     this.serviciosgenerales.retornadato("viajes",this.form.viajes)
     .subscribe(result =>{
-      this.form.viajes={id :result.id}
-    })
+      this.Viajes.id=result.id
+      console.log(result)
+      console.log(this.Viajes)
 
-    this.usuariosservice.retornarUsuario()
-    .subscribe(result =>{
-      this.form.usuario={id :result.id}
-    })
+      this.usuariosservice.retornarUsuario()
+      .subscribe(result =>{
+        this.Usuario.id=result.id
+        console.log(result)
+        console.log(this.Usuario)
+
+
+    this.datos=this.form;
+    this.form.viajes=this.Viajes
+    this.form.usuario=this.Usuario
+    console.log(this.form)
 
     this.serviciochollos.crearchollo(this.form)
-      .subscribe(result =>this.datos=result)
-      this.menu=1;
-  }
-  mostrarmenu(numero:any){
-    this.menu=numero;
+    .subscribe(result =>this.datos=result)
+    this.menu=0;
+      })
+
+
+
+    })
+
+
+
+
+
   }
 
-  buscachollo(){
+
+mostrarmenu(numero: any) {
+  this.menu = numero;
+}
+
+  buscachollo() {
     this.serviciochollos.retornarchollo(this.id)
-      .subscribe(result =>this.datos=result)
-      this.menu=1;
+      .subscribe(result => this.datos = result)
+    this.menu = 1;
   }
 
-  borrachollo(){
-    this.serviciochollos.deletechollo(this.id)
-      .subscribe(result =>this.datos=result)
-      this.menu=1;
+  eliminarchollo(numero: any) {
+    this.serviciochollos.deletechollo(numero)
+      .subscribe(result => this.datos = result)
+    this.menu = 1;
+  }
+
+  mostrarchollos() {
+    this.menu = 2;
+    this.serviciochollos.retornarchollos()
+      .subscribe(result => this.datos = result)
   }
 }
