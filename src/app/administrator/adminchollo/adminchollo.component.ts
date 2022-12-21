@@ -43,14 +43,12 @@ export class AdmincholloComponent {
       this.Viajes.id=result.id
       console.log(result)
       console.log(this.Viajes)
-    })
 
-    this.usuariosservice.retornarUsuario()
-    .subscribe(result =>{
-      this.Usuario.id=result.id
-      console.log(result)
-      console.log(this.Usuario)
-    })
+      this.usuariosservice.retornarUsuario()
+      .subscribe(result =>{
+        this.Usuario.id=result.id
+        console.log(result)
+        console.log(this.Usuario)
 
 
     this.datos=this.form;
@@ -58,14 +56,22 @@ export class AdmincholloComponent {
     this.form.usuario=this.Usuario
     console.log(this.form)
 
-    await this.creaputochollo()
-  }
-  creaputochollo(){
-  this.serviciochollos.crearchollo(this.form)
-  .subscribe(result =>this.datos=result)
-  this.menu=0;
+    this.serviciochollos.crearchollo(this.form)
+    .subscribe(result =>this.datos=result)
+    this.menu=0;
+      })
 
-}
+
+
+    })
+
+
+
+
+
+  }
+
+
 mostrarmenu(numero: any) {
   this.menu = numero;
 }

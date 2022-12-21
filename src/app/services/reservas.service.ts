@@ -16,9 +16,10 @@ export class ReservasService {
     return this.http.get("https://projectback-end-production-59f5.up.railway.app/api/usuarios/reservas/"+this.tokenData.getUser());
   }
 
-  hacerReserva(datos : Object): Observable<any>{
-    console.log(datos);
-    return this.http.post("https://projectback-end-production-59f5.up.railway.app/api/reservas/post",datos);
+  hacerReserva(datos : any): Observable<any>{
+    console.log(datos.usuario.id);
+    console.log(datos.chollo.id_chollo);
+    return this.http.post("https://projectback-end-production-59f5.up.railway.app/api/reservas/post",  datos);
   }
 
   eliminarReserva(id : number): Observable<any>{

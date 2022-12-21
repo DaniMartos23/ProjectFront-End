@@ -30,21 +30,24 @@ export class DataCardsComponent implements OnInit {
       const usuario = {id: 0}
 
       this.usuarioService.retornarUsuario().subscribe(data=>{
-        usuario.id = data.id;
-      });
-
-
-      const chollo = {id_chollo: idChollo}
-
-      const reserva = {
-        usuario: usuario,
-        chollo: chollo
-      }
-      console.log(reserva);
-      this.reservaService.hacerReserva(reserva).subscribe(data =>{
         console.log(data);
+        usuario.id = data.id;
 
+        const chollo = {id_chollo: idChollo}
+
+        const reserva = {
+          usuario: usuario,
+          chollo: chollo
+        }
+        console.log(reserva);
+        this.reservaService.hacerReserva(reserva).subscribe(data =>{
+          console.log(data);
+
+        });
       });
+
+
+
     }
 
     eliminarReserva(){
