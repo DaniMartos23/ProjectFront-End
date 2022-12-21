@@ -1,1 +1,107 @@
-<p>register works!</p>
+<!--
+<div class="login">
+  <form name="form" method="post" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+    <h1>Register</h1>
+    <input
+      name="nombre"
+      placeholder="nombre"
+      required="required"
+      [(ngModel)]="form.nombre"
+      #nombre="ngModel"
+    />
+    <br>
+    <input
+      name="usuario"
+      placeholder="usuario"
+      required="required"
+      [(ngModel)]="form.usuario"
+      #usuario="ngModel"
+    />
+    <br>
+    <input
+      type="password"
+      name="contraseña"
+      placeholder="contraseña"
+      required="required"
+      [(ngModel)]="form.contrasena"
+      #contrasena="ngModel"
+    />
+    <br>
+    <input
+      type="email"
+      name="email"
+      placeholder="email"
+      required="required"
+      [(ngModel)]="form.email"
+      #email="ngModel"
+    />
+
+    <br>
+    <button type="submit">Log in</button>
+  </form>
+</div>
+
+-->
+<mat-card>
+  <form name="form" method="post" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate >
+
+    <mat-card-header>
+      <mat-card-title>Registro</mat-card-title>
+    </mat-card-header>
+
+  <mat-card-content class="d-flex flex-column bd-highlight mb-3">
+  <mat-form-field class="p-2 bd-highlight">
+  <mat-label>Nombre</mat-label>
+  <input name="nombre"
+  placeholder="nombre"
+  required="required"
+  [(ngModel)]="form.nombre"
+  #nombre="ngModel" matInput>
+  <mat-error *ngIf="nombre.invalid">"Introduce un valor valido"</mat-error>
+</mat-form-field>
+
+
+<mat-form-field  class="p-2 bd-highlight">
+  <mat-label>Usuario</mat-label>
+  <input name="usuario"
+  placeholder="usuario"
+  required="required"
+  [(ngModel)]="form.usuario"
+  #usuario="ngModel" matInput>
+  <mat-error *ngIf="usuario.invalid">"Introduce un valor valido"</mat-error>
+</mat-form-field>
+
+
+  <mat-form-field  class="p-2 bd-highlight">
+    <mat-label>Contraseña</mat-label>
+    <input matInput
+    [type]="hide ? 'password' : 'text'"
+    type="password"
+    name="contraseña"
+    placeholder="contraseña"
+    required="required"
+    [(ngModel)]="form.contrasena"
+    #contrasena="ngModel">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <mat-form-field  class="p-2 bd-highlight">
+    <mat-label>Email</mat-label>
+    <input type="email"
+    name="email"
+    placeholder="email"
+    required="required"
+    [(ngModel)]="form.email"
+    #email="ngModel" matInput>
+    <mat-error *ngIf="email.invalid">"Introduce un valor valido"</mat-error>
+  </mat-form-field>
+
+  <button class="p-2 bd-highlight" mat-stroked-button type="submit">Entrar</button>
+    </mat-card-content>
+
+
+
+</form>
+</mat-card>

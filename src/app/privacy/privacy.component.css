@@ -1,0 +1,10 @@
+@media (max-width:768px){
+  #privacity {
+    width: 90% !important;
+  }
+}
+.row {
+  margin: 0;
+  text-indent: 2rem;
+  text-align: justify;
+}

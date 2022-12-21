@@ -1,0 +1,89 @@
+<!--
+<div class="main-container d-flex">
+  <div class="sidebar" id="side_nav"></div>
+  <div class="header-box px-2 pt-3 pb-4 d-flex justify-content-between">
+    <h1 class="fs-4">
+      <span class="bg-white text-dark rounded shadom px-2 me-2">CL</span>
+      <span class="text-white"> Zona VIP AmazingTrip</span>
+    </h1>
+    <button class="btn d-mb-none d-block close-btn px1 py-0 text-white">
+      <i class="fal fa-stream"></i>
+    </button>
+  </div>
+
+  <ul class="list-unstyled px-2 pt-3 pb-4">
+    <li class="">
+      <a href="#" class="text-decoration-none px-3 py-2 d-block"
+        ><i class="fa-solid fa-cart-flatbed-suitcase"></i> Mis Reservas</a
+      >
+    </li>
+    <li class="">
+      <a href="#" class="text-decoration-none px-3 py-2 d-block"
+        ><i class="fa-solid fa-user"></i> Mis datos</a
+      >
+    </li>
+    <li class="">
+      <a href="#" class="text-decoration-none px-3 py-2 d-block"
+        ><i class="fal fa-bars"></i> Logout</a
+      >
+    </li>
+  </ul>
+  <hr class="h-color mx-2" />
+  <ul class="list-unstyled px-2 px-3 py-2 d-block">
+    <li class="">
+      <a href="#" class="text-decoration-none px-3 py-2 d-block"
+        ><i class="fa-solid fa-user-headset"></i> Ayuda</a
+      >
+    </li>
+    <li class="">
+      <a href="#" class="text-decoration-none px-3 py-2 d-block"
+        ><i class="fa-solid fa-user-headset"></i> Regresar al inicio</a
+      >
+    </li>
+  </ul>
+  <div class="content">
+    <div class="dashboard-content px-3 pt-4">
+      <h2 class="f2-5">Area VIP AmazongTrip</h2>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum, adipisci
+        atque. Distinctio pariatur sunt omnis incidunt rem facilis, tenetur
+        saepe animi inventore numquam in, minima quisquam cumque, possimus minus
+        asperiores!
+      </p>
+    </div>
+  </div>
+</div>
+
+-->
+
+<div class="container">
+  <div class="row box ">
+    <div class="col-sm-4 center ">
+
+      <div class="text-center">
+        <img [src]="profileData.fotoPerfil" class="rounded rounded-circle img-size"  width="35%" height="35%">
+
+        <h1  class="display-1">{{profileData.usuario}}</h1>
+        <h3>{{profileData.nombre}} {{profileData.apellidos}}</h3>
+
+        <div *ngIf="profileData.correo != null">Correo: {{profileData.correo}} </div>
+        <div *ngIf="profileData.ciudad != null">Ciudad: {{profileData.ciudad}}</div>
+        <div *ngIf="profileData.fechaNacimiento != null">Fecha de nacimiento: {{profileData.fechaNacimiento}}</div>
+        <br>
+        <a  class="btn btn-outline-success" (click)="openDialog()">Editar Perfil</a>
+        <a  class="btn btn-outline-success" (click)="tokenData.logout()">Desconectarse</a>
+      </div>
+
+
+    </div>
+
+    <div class="col-lg-8">
+
+      <div *ngFor="let reservaChollo of reservas">
+        <app-data-cards [dataChollos]="reservaChollo.chollo" [reservaId]="reservaChollo.id" [isReserva]=true ></app-data-cards>
+      </div>
+
+
+    </div>
+  </div>
+</div>

@@ -5,22 +5,39 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginsRoutingModule } from './logins-routing.module';
 
+import { UsuarioComponent } from './usuario/usuario.component';
+
+import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
+import { EditarUsuarioComponent } from './usuario/editarUsuario/editar-usuario/editar-usuario.component';
+import { AppModule } from "../app.module";
+import { ElementsModule } from '../elements/elements.module';
+
+
+
+
 
 
 @NgModule({
-  declarations: [
-    LoginsComponent,
-    LoginComponent,
-    RegisterComponent
-  ],
-  imports: [
-    CommonModule,
-    LoginsRoutingModule
-  ],
-  exports:[
-    LoginComponent,
-    LoginsComponent,
-    RegisterComponent
-  ]
+    declarations: [
+        LoginsComponent,
+        LoginComponent,
+        RegisterComponent,
+        UsuarioComponent,
+        EditarUsuarioComponent,
+
+    ],
+    exports: [
+        LoginComponent,
+        LoginsComponent,
+        RegisterComponent
+    ],
+    imports: [
+        CommonModule,
+        LoginsRoutingModule,
+        FormsModule,
+        SharedModule,
+        ElementsModule
+    ]
 })
 export class LoginsModule { }

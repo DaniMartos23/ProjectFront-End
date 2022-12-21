@@ -1,0 +1,23 @@
+<div class="title">
+  <h1>Ver Hoteles</h1>
+</div>
+<!-- <div *ngIf="hoteles$ | async as hoteles" class="container"> -->
+<app-spinner *ngIf="loading"></app-spinner>
+<div *ngIf="hoteles != null" class="container">
+  <mat-card class="card">
+      <mat-card-title>{{ hoteles.nombre }}</mat-card-title>
+      <mat-card-content>
+          <p><strong>Nombre:</strong> {{ hoteles.nombre }} </p>
+          <p><strong>Estrellas:</strong> {{ hoteles.estrellas }} </p>
+          <p><strong>Direccion:</strong> {{ hoteles.direccion }} </p>
+          <p><strong>Localidad:</strong> {{ hoteles.localidad }} </p>
+          <p><strong>Precio:</strong> {{ hoteles.precio }} euros </p>
+          <p><strong>Descripcion:</strong> {{ hoteles.descripcion}} </p>
+          <p><strong>Tipo_pension:</strong> {{ hoteles.tipo_pension }} </p>
+          <p><strong>Mascotas</strong> {{ hoteles.mascotas}} cantidad </p>
+      </mat-card-content>
+      <mat-card-actions>
+          <button routerLink="/listHoteles" mat-raised-button>Volver</button>
+      </mat-card-actions>
+  </mat-card>
+</div>
