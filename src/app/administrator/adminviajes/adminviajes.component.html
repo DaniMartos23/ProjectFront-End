@@ -1,94 +1,86 @@
 <h1>Viajes</h1>
 
-<div class="btn-group">
+<div class="btn-group d-flex align-content-center">
   <a class="btn btn-primary" (click)="mostrarmenu(1)">Crear viaje</a>
-  <a class="btn btn-primary" (click)="mostrarmenu(2)">Escoger viaje</a>
-  <a class="btn btn-primary" (click)="mostrarmenu(3)">Modificar viaje</a>
-  <a class="btn btn-primary" (click)="mostrarmenu(4)">Borrar viaje</a>
+  <a class="btn btn-primary" (click)="mostrarviajes()">Mostrar viajes</a>
 </div>
 
 <div class="m-1 p-3 border border-dark" *ngIf="menu == 1">
-  <form (ngSubmit)="onSubmit()">
+  <form (ngSubmit)="onSubmit(fcrear)" #fcrear="ngForm">
     <div>
-      <label for="vuelos"> Vuelo  </label>
-      <input
-        id="vuelos"
-        type="text"
-        [(ngModel)]="form.vuelos"
-        name="vuelos"
-        #vuelos ="ngModel"
-      />
+      <label class="form-label" for="vuelos"> Vuelo </label>
+      <input class="form-control" id="vuelos" type="text" [(ngModel)]="form.vuelos" name="vuelos" #vuelos="ngModel" />
     </div>
     <br />
     <div>
-      <label for="hotel"> Hotel </label>
-      <input
-        id="hotel"
-        type="text"
-        [(ngModel)]="form.hotel"
-        name="hotel"
-        #hotel="ngModel"
-      />
+      <label class="form-label" for="hotel"> Hotel </label>
+      <input class="form-control" id="hotel" type="text" [(ngModel)]="form.hotel" name="hotel" #hotel="ngModel" />
     </div>
     <br />
     <div>
-      <label for="origen"> Origen </label>
-      <input
-        id="origen"
-        type="text"
-        [(ngModel)]="form.origen"
-        name="origen"
-        #origen="ngModel"
-      />
+      <label class="form-label" for="origen"> Origen </label>
+      <input class="form-control" id="origen" type="text" [(ngModel)]="form.origen" name="origen" #origen="ngModel" />
     </div>
     <br />
     <div>
-      <label for="destino"> Destino </label>
-      <input
-        id="destino"
-        type="text"
-        [(ngModel)]="form.destino"
-        name="descripcdestinoion"
-        #destino="ngModel"
-      />
+      <label class="form-label" for="destino"> Destino </label>
+      <input class="form-control" id="destino" type="text" [(ngModel)]="form.destino" name="destino" #destino="ngModel" />
     </div>
     <br />
     <button class="button" type="submit">Crear</button>
   </form>
 </div>
 
-<div class="m-1 p-3 border border-dark" *ngIf="menu == 2">
-  <form (ngSubmit)="buscaviaje()">
-    <div>
-      <label for="busqueda"> Entra id del viaje </label>
-      <input
-        id="busqueda"
-        type="text"
-        [(ngModel)]="id"
-        name="busqueda"
-        #busqueda="ngModel"
-      />
-    </div>
-    <br />
-    <button class="button" type="submit">Buscar</button>
-  </form>
-</div>
-
-<div class="m-1 p-3 border border-dark" *ngIf="menu == 4">
-  <form (ngSubmit)="borraviaje()">
-    <div>
-      <label for="busqueda"> Entra id del viaje </label>
-      <input
-        id="busqueda"
-        type="text"
-        [(ngModel)]="id"
-        name="busqueda"
-        #busqueda="ngModel"
-      />
-    </div>
-    <br />
-    <button class="button" type="submit">Borrar</button>
-  </form>
+<div class="table-responsive" *ngIf="menu == 2 && !mod">
+  <table class="table table-striped text-center table-bordered align-middle">
+    <thead>
+      <tr>
+        <th>Vuelos ID</th>
+        <th>Hotel ID</th>
+        <th>Origen</th>
+        <th>Destino</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dato of datos">
+        <td>{{ dato.vuelos.id }}</td>
+        <td>{{ dato.hotel.id }}</td>
+        <td>{{ dato.origen }}</td>
+        <td>{{ dato.destino }}</td>
+        <td>
+          <div class="d-flex flex-column mb-2">
+            <a class="btn btn-success btn-sm m-1" (click)="modificaviajes(dato.id)">+</a>
+            <a class="btn btn-danger btn-sm m-1" (click)="borrarviajes(dato.id)">-</a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 <br />
-{{ datos }}
+<div class="m-1 p-3 border border-dark" *ngIf="mod == true">
+  <form (ngSubmit)="modifica(fmodificar)" #fmodificar="ngForm">
+    <div>
+      <label class="form-label" for="vuelos"> Vuelo </label>
+      <input class="form-control" id="vuelos" type="text" [(ngModel)]="form.vuelos" name="vuelos" #vuelos="ngModel" placeholder="{{datos.vuelos.id}}"/>
+    </div>
+    <br />
+    <div>
+      <label class="form-label" for="hotel"> Hotel </label>
+      <input class="form-control" id="hotel" type="text" [(ngModel)]="form.hotel" name="hotel" #hotel="ngModel" placeholder="{{datos.hotel.id}}"/>
+    </div>
+    <br />
+    <div>
+      <label class="form-label" for="origen"> Origen </label>
+      <input class="form-control" id="origen" type="text" [(ngModel)]="form.origen" name="origen" #origen="ngModel" placeholder="{{datos.origen}}"/>
+    </div>
+    <br />
+    <div>
+      <label class="form-label" for="destino"> Destino </label>
+      <input class="form-control" id="destino" type="text" [(ngModel)]="form.destino" name="destino" #destino="ngModel" placeholder="{{datos.destino}}"/>
+    </div>
+    <br />
+    <button class="btn btn-success m-1" type="submit">Guardar</button>
+    <a class="btn btn-danger btn-sm m-1" (click)="mostrarviajes()">Cancelar</a>
+  </form>
+</div>

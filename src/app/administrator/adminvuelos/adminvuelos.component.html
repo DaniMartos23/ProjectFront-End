@@ -1,17 +1,16 @@
 <h1>Vuelos</h1>
 
-<div class="btn-group">
+<div class="btn-group d-flex align-content-center">
   <a class="btn btn-primary" (click)="mostrarmenu(1)">Crear vuelo</a>
-  <a class="btn btn-primary" (click)="mostrarmenu(2)">Escoger vuelo</a>
-  <a class="btn btn-primary" (click)="mostrarmenu(3)">Modificar vuelo</a>
-  <a class="btn btn-primary" (click)="mostrarmenu(4)">Borrar vuelo</a>
+  <a class="btn btn-primary" (click)="mostrarvuelos()">Mostrar vuelos</a>
 </div>
 
-<div class="m-1 p-3 border border-dark" *ngIf="menu == 1">
-  <form (ngSubmit)="onSubmit()">
+<div class="m-1 p-3 border border-dark" *ngIf="menu == 1 && !mod">
+  <form (ngSubmit)="onSubmit(fcrear)" #fcrear="ngForm">
     <div>
-      <label  class="form-label" for="aerolinea"> Aereolinea </label>
-      <input  class="form-control"
+      <label class="form-label" for="aerolinea"> Aereolinea </label>
+      <input
+        class="form-control"
         id="aerolinea"
         type="text"
         [(ngModel)]="form.aerolinea"
@@ -22,7 +21,8 @@
     <br />
     <div>
       <label for="tipoAsiento"> Tipo de Asiento </label>
-      <input class="form-control"
+      <input
+        class="form-control"
         id="tipoAsiento"
         type="text"
         [(ngModel)]="form.tipoAsiento"
@@ -33,7 +33,8 @@
     <br />
     <div>
       <label for="maletas"> Maletas </label>
-      <input class="form-control"
+      <input
+        class="form-control"
         id="maletas"
         type="text"
         [(ngModel)]="form.maletas"
@@ -44,7 +45,8 @@
     <br />
     <div>
       <label for="asignacion_asiento"> Asignacion de asiento </label>
-      <input class="form-control"
+      <input
+        class="form-control"
         id="asignacion_asiento"
         type="text"
         [(ngModel)]="form.asignacion_asiento"
@@ -55,7 +57,8 @@
     <br />
     <div>
       <label for="duracion"> Duración </label>
-      <input class="form-control"
+      <input
+        class="form-control"
         id="duracion"
         type="text"
         [(ngModel)]="form.duracion"
@@ -66,7 +69,8 @@
     <br />
     <div>
       <label for="escalas"> Escalas </label>
-      <input class="form-control"
+      <input
+        class="form-control"
         id="escalas"
         type="text"
         [(ngModel)]="form.escalas"
@@ -77,7 +81,8 @@
     <br />
     <div>
       <label for="origen"> Origen </label>
-      <input class="form-control"
+      <input
+        class="form-control"
         id="origen"
         type="text"
         [(ngModel)]="form.origen"
@@ -88,7 +93,8 @@
     <br />
     <div>
       <label for="destino"> Destino </label>
-      <input class="form-control"
+      <input
+        class="form-control"
         id="destino"
         type="text"
         [(ngModel)]="form.destino"
@@ -101,38 +107,148 @@
   </form>
 </div>
 
-<div class="m-1 p-3 border border-dark" *ngIf="menu == 2">
-  <form (ngSubmit)="buscavuelo()">
-    <div>
-      <label for="busqueda"> Entra id del vuelo </label>
-      <input
-        id="busqueda"
-        type="text"
-        [(ngModel)]="id"
-        name="busqueda"
-        #busqueda="ngModel"
-      />
-    </div>
-    <br />
-    <button class="button" type="submit">Buscar</button>
-  </form>
-</div>
-
-<div class="m-1 p-3 border border-dark" *ngIf="menu == 4">
-  <form (ngSubmit)="borravuelo()">
-    <div>
-      <label for="busqueda"> Entra id del vuelo </label>
-      <input
-        id="busqueda"
-        type="text"
-        [(ngModel)]="id"
-        name="busqueda"
-        #busqueda="ngModel"
-      />
-    </div>
-    <br />
-    <button class="button" type="submit">Borrar</button>
-  </form>
+<div class="table-responsive" *ngIf="menu == 2 && !mod">
+  <table class="table table-striped text-center table-bordered align-middle">
+    <thead>
+      <tr>
+        <th>Aerolinea</th>
+        <th>tipoAsiento</th>
+        <th>maletas</th>
+        <th>asignacion_asiento</th>
+        <th>duracion</th>
+        <th>escalas</th>
+        <th>origen</th>
+        <th>destino</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dato of datos">
+        <td>{{ dato.aerolinea }}</td>
+        <td>{{ dato.tipoAsiento }}</td>
+        <td>{{ dato.maletas }}</td>
+        <td>{{ dato.asignacion_asiento }}</td>
+        <td>{{ dato.duracion }}</td>
+        <td>{{ dato.escalas }}</td>
+        <td>{{ dato.origen }}</td>
+        <td>{{ dato.destino }}</td>
+        <td>
+          <div class="d-flex flex-column mb-2">
+            <a class="btn btn-success btn-sm m-1"(click)="modificavuelo(dato.id)">+</a>
+            <a class="btn btn-danger btn-sm m-1" (click)="borrarvuelo(dato.id)">-</a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 <br />
-{{ datos }}
+<div class="m-1 p-3 border border-dark" *ngIf="mod==true">
+  <form (ngSubmit)="modifica(fmodificar)" #fmodificar="ngForm">
+    <div>
+      <label class="form-label" for="aerolinea"> Aereolinea </label>
+      <input
+        class="form-control"
+        id="aerolinea"
+        type="text"
+        [(ngModel)]="form.aerolinea"
+        name="aerolinea"
+        #aerolinea="ngModel"
+        placeholder="{{datos.aerolinea}}"
+      />
+    </div>
+    <br />
+    <div>
+      <label for="tipoAsiento"> Tipo de Asiento </label>
+      <input
+        class="form-control"
+        id="tipoAsiento"
+        type="text"
+        [(ngModel)]="form.tipoAsiento"
+        name="tipoAsiento"
+        #tipoAsiento="ngModel"
+        placeholder="{{datos.tipoAsiento}}"
+      />
+    </div>
+    <br />
+    <div>
+      <label for="maletas"> Maletas </label>
+      <input
+        class="form-control"
+        id="maletas"
+        type="text"
+        [(ngModel)]="form.maletas"
+        name="maletas"
+        #maletas="ngModel"
+        placeholder="{{datos.maletas}}"
+      />
+    </div>
+    <br />
+    <div>
+      <label for="asignacion_asiento"> Asignacion de asiento </label>
+      <input
+        class="form-control"
+        id="asignacion_asiento"
+        type="text"
+        [(ngModel)]="form.asignacion_asiento"
+        name="asignacion_asiento"
+        #asignacion_asiento="ngModel"
+        placeholder="{{datos.asignacion_asiento}}"
+      />
+    </div>
+    <br />
+    <div>
+      <label for="duracion"> Duración </label>
+      <input
+        class="form-control"
+        id="duracion"
+        type="text"
+        [(ngModel)]="form.duracion"
+        name="duracion"
+        #duracion="ngModel"
+        placeholder="{{datos.duracion}}"
+      />
+    </div>
+    <br />
+    <div>
+      <label for="escalas"> Escalas </label>
+      <input
+        class="form-control"
+        id="escalas"
+        type="text"
+        [(ngModel)]="form.escalas"
+        name="escalas"
+        #escalas="ngModel"
+        placeholder="{{datos.escalas}}"
+      />
+    </div>
+    <br />
+    <div>
+      <label for="origen"> Origen </label>
+      <input
+        class="form-control"
+        id="origen"
+        type="text"
+        [(ngModel)]="form.origen"
+        name="origen"
+        #origen="ngModel"
+        placeholder="{{datos.origen}}"
+      />
+    </div>
+    <br />
+    <div>
+      <label for="destino"> Destino </label>
+      <input
+        class="form-control"
+        id="destino"
+        type="text"
+        [(ngModel)]="form.destino"
+        name="destino"
+        #destino="ngModel"
+        placeholder="{{datos.destino}}"
+      />
+    </div>
+    <br />
+    <button class="btn btn-success m-1" type="submit">Guardar</button>
+    <a class="btn btn-danger btn-sm m-1" (click)="mostrarvuelos()">Cancelar</a>
+  </form>
+</div>
