@@ -10,24 +10,24 @@
 <div class="m-1 p-3 border border-dark" *ngIf="menu == 1">
   <form (ngSubmit)="onSubmit()">
     <div>
-      <label  class="form-label" for="aereolinea"> Aereolinea </label>
+      <label  class="form-label" for="aerolinea"> Aereolinea </label>
       <input  class="form-control"
-        id="aereolinea"
+        id="aerolinea"
         type="text"
-        [(ngModel)]="form.aereolinea"
-        name="aereolinea"
-        #aereolinea="ngModel"
+        [(ngModel)]="form.aerolinea"
+        name="aerolinea"
+        #aerolinea="ngModel"
       />
     </div>
     <br />
     <div>
-      <label for="TipoAsiento"> Tipo de Asiento </label>
+      <label for="tipoAsiento"> Tipo de Asiento </label>
       <input class="form-control"
-        id="TipoAsiento"
+        id="tipoAsiento"
         type="text"
-        [(ngModel)]="form.TipoAsiento"
-        name="TipoAsiento"
-        #TipoAsiento="ngModel"
+        [(ngModel)]="form.tipoAsiento"
+        name="tipoAsiento"
+        #tipoAsiento="ngModel"
       />
     </div>
     <br />

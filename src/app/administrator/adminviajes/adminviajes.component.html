@@ -10,90 +10,46 @@
 <div class="m-1 p-3 border border-dark" *ngIf="menu == 1">
   <form (ngSubmit)="onSubmit()">
     <div>
-      <label for="fechacaducidad"> Fecha caducidad </label>
+      <label for="vuelos"> Vuelo  </label>
       <input
-        id="fechacaducidad"
-        type="date"
-        [(ngModel)]="form.fechacaducidad"
-        name="fechacaducidad"
-        #fechacaducidad="ngModel"
+        id="vuelos"
+        type="text"
+        [(ngModel)]="form.vuelos"
+        name="vuelos"
+        #vuelos ="ngModel"
       />
     </div>
     <br />
     <div>
-      <label for="titulo"> titulo </label>
+      <label for="hotel"> Hotel </label>
       <input
-        id="titulo"
+        id="hotel"
         type="text"
-        [(ngModel)]="form.titulo"
-        name="titulo"
-        #titulo="ngModel"
+        [(ngModel)]="form.hotel"
+        name="hotel"
+        #hotel="ngModel"
       />
     </div>
     <br />
     <div>
-      <label for="precio"> precio </label>
+      <label for="origen"> Origen </label>
       <input
-        id="precio"
+        id="origen"
         type="text"
-        [(ngModel)]="form.precio"
-        name="precio"
-        #precio="ngModel"
+        [(ngModel)]="form.origen"
+        name="origen"
+        #origen="ngModel"
       />
     </div>
     <br />
     <div>
-      <label for="descripcion"> descripcion </label>
+      <label for="destino"> Destino </label>
       <input
-        id="descripcion"
+        id="destino"
         type="text"
-        [(ngModel)]="form.descripcion"
-        name="descripcion"
-        #descripcion="ngModel"
-      />
-    </div>
-    <br />
-    <div>
-      <label for="valoracion"> valoracion </label>
-      <input
-        id="valoracion"
-        type="text"
-        [(ngModel)]="form.valoracion"
-        name="valoracion"
-        #valoracion="ngModel"
-      />
-    </div>
-    <br />
-    <div>
-      <label for="unidades"> unidades </label>
-      <input
-        id="unidades"
-        type="text"
-        [(ngModel)]="form.unidades"
-        name="unidades"
-        #unidades="ngModel"
-      />
-    </div>
-    <br />
-    <div>
-      <label for="image_url"> image url </label>
-      <input
-        id="image_url"
-        type="text"
-        [(ngModel)]="form.image_url"
-        name="image_url"
-        #image_url="ngModel"
-      />
-    </div>
-    <br />
-    <div>
-      <label for="viajes"> ID_viaje </label>
-      <input
-        id="viajes"
-        type="text"
-        [(ngModel)]="form.viajes"
-        name="viajes"
-        #viajes="ngModel"
+        [(ngModel)]="form.destino"
+        name="descripcdestinoion"
+        #destino="ngModel"
       />
     </div>
     <br />

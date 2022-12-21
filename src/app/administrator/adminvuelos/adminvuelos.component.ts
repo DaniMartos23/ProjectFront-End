@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { GeneralesService } from 'src/app/services/generales.service';
 import { UsuariosService } from 'src/app/services/usuarios.service';
@@ -12,8 +13,8 @@ export class AdminvuelosComponent {
   datos:any;
   id:any;
   form: any = {
-    aereolinea: null,
-    TipoAsiento: null,
+    aerolinea: null,
+    tipoAsiento: null,
     maletas: null,
     asignacion_asiento: null,
     duracion: null,
@@ -25,6 +26,7 @@ export class AdminvuelosComponent {
   constructor(private serviciosgenerales: GeneralesService,private usuariosservice:UsuariosService){}
 
   onSubmit(){
+    console.log(this.form);
     this.serviciosgenerales.creardatos("vuelos",this.form)
       .subscribe(result =>this.datos=result)
       this.menu=1;
