@@ -9,63 +9,55 @@ import { EditarUsuarioComponent } from './editarUsuario/editar-usuario/editar-us
 @Component({
   selector: 'app-usuario',
   templateUrl: './usuario.component.html',
-  styleUrls: ['./usuario.component.css']
+  styleUrls: ['./usuario.component.css'],
 })
-export class UsuarioComponent implements OnInit  {
-
+export class UsuarioComponent implements OnInit {
   EditDialog = true;
   profileData = <usuario>{};
   reservas: any;
 
-  constructor(private UsuarioService: UsuariosService, public tokenData: TokenStorageService,  public dialog: MatDialog,  public reservaService: ReservasService){}
-
-
+  constructor(
+    private UsuarioService: UsuariosService,
+    public tokenData: TokenStorageService,
+    public dialog: MatDialog,
+    public reservaService: ReservasService
+  ) {}
 
   ngOnInit(): void {
-   this.UsuarioService.retornarUsuario().subscribe(data =>{
-    this.profileData = data;
-    console.log(this.profileData);
-   });
+    this.UsuarioService.retornarUsuario().subscribe((data) => {
+      this.profileData = data;
+      console.log(this.profileData);
+    });
 
-   this.reservaService.retornarReservasUsuario().subscribe(data =>{
-    this.reservas = data;
-    console.log(this.reservas);
-   })
-
-
-
+    this.reservaService.retornarReservasUsuario().subscribe((data) => {
+      this.reservas = data;
+      console.log(this.reservas);
+    });
   }
 
   openDialog(): void {
-
     const dialogConfig = new MatDialogConfig();
-
 
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     //dialogConfig.width = "65%"
-    dialogConfig.enterAnimationDuration = "400ms";
-    dialogConfig.exitAnimationDuration = "1200ms";
+    dialogConfig.enterAnimationDuration = '400ms';
+    dialogConfig.exitAnimationDuration = '1200ms';
 
-    this.dialog.open(EditarUsuarioComponent,{data: {
-      usuario: this.profileData.usuario,
-      nombre: this.profileData.nombre,
-      apellidos: this.profileData.apellidos,
-      correo: this.profileData.correo,
-      ciudad: this.profileData.ciudad,
-      fotoPerfil: this.profileData.fotoPerfil,
-      fechaNacimiento: this.profileData.fechaNacimiento
-    }});
+    this.dialog.open(EditarUsuarioComponent, {
+      data: {
+        usuario: this.profileData.usuario,
+        nombre: this.profileData.nombre,
+        apellidos: this.profileData.apellidos,
+        correo: this.profileData.correo,
+        ciudad: this.profileData.ciudad,
+        fotoPerfil: this.profileData.fotoPerfil,
+        fechaNacimiento: this.profileData.fechaNacimiento,
+      },
+    });
   }
 
-  openOtherDialog(){
+  openOtherDialog() {
     this.EditDialog = !this.EditDialog;
   }
-
-
-
 }
-
-
-
-

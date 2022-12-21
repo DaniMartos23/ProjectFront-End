@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class GeneralesService {
 
-  private urlbase = 'https://projectback-end-production-59f5.up.railway.app/api/'
+  private urlbase:string='https://projectback-end-production-59f5.up.railway.app/api/'
   constructor(private http: HttpClient) { }
 
   retornardatos(ruta: string):Observable<any>{
@@ -18,7 +18,7 @@ export class GeneralesService {
     return this.http.get(this.urlbase+ruta+'/'+id);
   }
 
-  creardatos(ruta:string,datos : Object):Observable<any>{
+  creardatos(ruta:string,datos : any):Observable<any>{
     return this.http.post(this.urlbase+ruta,datos);
   }
 

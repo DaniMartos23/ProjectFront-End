@@ -1,138 +1,89 @@
 <h1>Chollos!</h1>
 
-<div class="btn-group">
+<div class="btn-group d-flex align-content-center">
   <a class="btn btn-primary" (click)="mostrarmenu(1)">Crear chollo</a>
-  <a class="btn btn-primary" (click)="mostrarmenu(2)">Escoger chollos</a>
-  <a class="btn btn-primary" (click)="mostrarmenu(3)">Modificar chollo</a>
-  <a class="btn btn-primary" (click)="mostrarmenu(4)">Borrar chollo</a>
+  <a class="btn btn-primary" (click)="mostrarchollos()">Mostrar chollos</a>
 </div>
 
-<div class="m-1 p-3 border border-dark" *ngIf="menu == 1">
-  <form (ngSubmit)="onSubmit()">
+<div class="m-1 p-3" *ngIf="menu == 1">
+  <form (ngSubmit)="creachollos()">
     <div>
-      <label for="fechacaducidad"> Fecha caducidad </label>
-      <input
-        id="fechacaducidad"
-        type="date"
-        [(ngModel)]="form.fechacaducidad"
-        name="fechacaducidad"
-        #fechacaducidad="ngModel"
-      />
+      <label class="form-label" for="fecha"> Fecha caducidad </label>
+      <input class="form-control" id="fecha" type="date" [(ngModel)]="form.fecha" name="fecha" #fecha="ngModel" />
     </div>
     <br />
     <div>
-      <label for="titulo"> titulo </label>
-      <input
-        id="titulo"
-        type="text"
-        [(ngModel)]="form.titulo"
-        name="titulo"
-        #titulo="ngModel"
-      />
+      <label class="form-label" for="titulo"> titulo </label>
+      <input class="form-control" id="titulo" type="text" [(ngModel)]="form.titulo" name="titulo" #titulo="ngModel" />
     </div>
     <br />
     <div>
-      <label for="precio"> precio </label>
-      <input
-        id="precio"
-        type="text"
-        [(ngModel)]="form.precio"
-        name="precio"
-        #precio="ngModel"
-      />
+      <label class="form-label" for="precio"> precio </label>
+      <input class="form-control" id="precio" type="text" [(ngModel)]="form.precio" name="precio" #precio="ngModel" />
     </div>
     <br />
     <div>
-      <label for="descripcion"> descripcion </label>
-      <input
-        id="descripcion"
-        type="text"
-        [(ngModel)]="form.descripcion"
-        name="descripcion"
-        #descripcion="ngModel"
-      />
+      <label class="form-label" for="descripcion"> descripcion </label>
+      <input class="form-control" id="descripcion" type="text" [(ngModel)]="form.descripcion" name="descripcion"
+        #descripcion="ngModel" />
     </div>
     <br />
     <div>
-      <label for="valoracion"> valoracion </label>
-      <input
-        id="valoracion"
-        type="text"
-        [(ngModel)]="form.valoracion"
-        name="valoracion"
-        #valoracion="ngModel"
-      />
+      <label class="form-label" for="valoracion"> valoracion </label>
+      <input class="form-control" id="valoracion" type="text" [(ngModel)]="form.valoracion" name="valoracion"
+        #valoracion="ngModel" />
     </div>
     <br />
     <div>
-      <label for="unidades"> unidades </label>
-      <input
-        id="unidades"
-        type="text"
-        [(ngModel)]="form.unidades"
-        name="unidades"
-        #unidades="ngModel"
-      />
+      <label class="form-label" for="unidades"> unidades </label>
+      <input class="form-control" id="unidades" type="text" [(ngModel)]="form.unidades" name="unidades"
+        #unidades="ngModel" />
     </div>
     <br />
     <div>
-      <label for="image_url"> image url </label>
-      <input
-        id="image_url"
-        type="text"
-        [(ngModel)]="form.image_url"
-        name="image_url"
-        #image_url="ngModel"
-      />
+      <label class="form-label" for="image_url"> image url </label>
+      <input class="form-control" id="image_url" type="text" [(ngModel)]="form.image_url" name="image_url"
+        #image_url="ngModel" />
     </div>
     <br />
     <div>
-      <label for="viajes"> ID_viaje </label>
-      <input
-        id="viajes"
-        type="text"
-        [(ngModel)]="form.viajes"
-        name="viajes"
-        #viajes="ngModel"
-      />
+      <label class="form-label" for="viajes"> ID_viaje </label>
+      <input class="form-control" id="viajes" type="text" [(ngModel)]="form.viajes" name="viajes" #viajes="ngModel" />
     </div>
     <br />
     <button class="button" type="submit">Crear</button>
   </form>
 </div>
 
-<div class="m-1 p-3 border border-dark" *ngIf="menu == 2">
+<div class="m-1 p-3" *ngIf="menu == 2">
+  <div class="position-relative p-3" *ngFor="let chollo of datos">
+
+    <app-data-cards [dataChollos]="chollo"></app-data-cards>
+
+    <a class="btn btn-danger m-1 position-absolute top-0 end-0"
+      (click)="eliminarchollo(chollo.id_chollo)">-</a>
+  </div>
+</div>
+
+<div class="m-1 p-3" *ngIf="menu == 3">
   <form (ngSubmit)="buscachollo()">
     <div>
       <label for="busqueda"> Entra id del chollo </label>
-      <input
-        id="busqueda"
-        type="text"
-        [(ngModel)]="id"
-        name="busqueda"
-        #busqueda="ngModel"
-      />
+      <input id="busqueda" type="text" [(ngModel)]="id" name="busqueda" #busqueda="ngModel" />
     </div>
     <br />
     <button class="button" type="submit">Buscar</button>
   </form>
 </div>
 
-<div class="m-1 p-3 border border-dark" *ngIf="menu == 4">
-  <form (ngSubmit)="borrachollo()">
+<div class="m-1 p-3 border border-dark" *ngIf="menu == 5">
+  <form>
     <div>
       <label for="busqueda"> Entra id del chollo </label>
-      <input
-        id="busqueda"
-        type="text"
-        [(ngModel)]="id"
-        name="busqueda"
-        #busqueda="ngModel"
-      />
+      <input id="busqueda" type="text" [(ngModel)]="id" name="busqueda" #busqueda="ngModel" />
     </div>
     <br />
     <button class="button" type="submit">Borrar</button>
   </form>
 </div>
 <br />
-{{ datos }}

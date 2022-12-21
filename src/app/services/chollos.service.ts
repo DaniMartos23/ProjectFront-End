@@ -19,6 +19,7 @@ export class ChollosService {
   }
 
   crearchollo(datos : Object):Observable<any>{
+    console.log(datos);
     return this.http.post(this.urlbase,datos);
   }
 
