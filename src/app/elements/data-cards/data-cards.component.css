@@ -1,6 +1,9 @@
 .card-size{
   margin-left: 25px;
   margin-bottom: 15px;
+  min-width: auto;
+  max-width: 500px;
+  height: auto;
   border: 2px solid black;
 }
 

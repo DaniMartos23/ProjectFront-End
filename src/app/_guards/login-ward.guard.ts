@@ -15,7 +15,9 @@ export class LoginWardGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       console.log("messi");
       if (this.tokenStorage.getToken() == null) {
+        console.log("NO MESSI");
         return this.router.navigate(['']).then(() => false);
+
       }
     return true;
   }

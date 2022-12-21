@@ -18,14 +18,13 @@ export class LoginsComponent {
 
     const dialogConfig = new MatDialogConfig();
 
-
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     //dialogConfig.width = "65%"
     dialogConfig.enterAnimationDuration = "400ms";
     dialogConfig.exitAnimationDuration = "1200ms";
-
     this.dialog.open(RegisterComponent);
+
   }
 
   openOtherDialog(){

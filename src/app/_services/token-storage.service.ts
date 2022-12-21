@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 const TOKEN_KEY = 'auth-token';
 const USER_KEY = 'auth-user'
@@ -41,7 +42,15 @@ export class TokenStorageService {
   public logout(): void {
     localStorage.removeItem(USER_KEY);
     localStorage.removeItem(TOKEN_KEY);
-    window.location.reload();
+
+    Swal.fire({
+      position: 'bottom-end',
+      icon: 'success',
+      title: 'Cierre de sesión correcto',
+      showConfirmButton: false,
+      timer: 1500
+    })
+
 
   }
 
