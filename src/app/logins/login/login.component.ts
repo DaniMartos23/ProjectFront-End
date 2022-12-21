@@ -1,8 +1,9 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Route, Router } from '@angular/router';
 import { AuthService } from 'src/app/_services/auth.service';
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ import { TokenStorageService } from 'src/app/_services/token-storage.service';
 export class LoginComponent implements OnInit {
 
   constructor(private authService: AuthService, private tokenStorage: TokenStorageService,
-    public dialogRef: MatDialog, private router: Router){}
+    public dialogRef: MatDialogRef<LoginComponent>, private router: Router){}
 
   form: any = {
     usuario: null,
@@ -52,7 +53,6 @@ export class LoginComponent implements OnInit {
     this.authService.login(usuario, contrasena).subscribe(
       data => {
 
-        console.log(data);
         this.tokenStorage.saveToken(data.token);
         this.tokenStorage.saveUser(usuario);
         this.isLoginFailed = false;
@@ -61,19 +61,25 @@ export class LoginComponent implements OnInit {
         this.tokenData = this.tokenStorage.getToken();
         this.userData = this.tokenStorage.getUser();
 
-        this.datos();
-        window.location.reload();
+        Swal.fire({
+          position: 'bottom-end',
+          icon: 'success',
+          title: 'Has iniciado sesión correctamente',
+          showConfirmButton: false,
+          timer: 1500
+        })
+
+            this.dialogRef.close();
+
+
+
 
       }
     );
 
   }
 
-  datos(){
-    console.log(this.tokenData);
-    console.log(this.userData);
-    console.log(this.roles);
-  }
+
 
 
 }

@@ -24,6 +24,11 @@ export class UsuarioComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.getData();
+  }
+
+
+  getData(event?: any){
     this.UsuarioService.retornarUsuario().subscribe((data) => {
       this.profileData = data;
       console.log(this.profileData);
@@ -32,8 +37,11 @@ export class UsuarioComponent implements OnInit {
     this.reservaService.retornarReservasUsuario().subscribe((data) => {
       this.reservas = data;
       console.log(this.reservas);
+      console.log("south park")
     });
   }
+
+
 
   openDialog(): void {
     const dialogConfig = new MatDialogConfig();
@@ -55,6 +63,14 @@ export class UsuarioComponent implements OnInit {
         fechaNacimiento: this.profileData.fechaNacimiento,
       },
     });
+
+    this.dialog.afterAllClosed.subscribe(data=>{
+      this.getData();
+    }
+
+    )
+
+
   }
 
   openOtherDialog() {

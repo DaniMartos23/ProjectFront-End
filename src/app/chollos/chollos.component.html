@@ -3,9 +3,9 @@
 
 </div>-->
 
-<app-search-bar></app-search-bar>
+<app-search-bar (destinoFilter)="recargar($event)"></app-search-bar>
 
-<!---->
+<!--
 <div class="container">
   <div class="row">
     <div class="col-4">col-4</div>
@@ -17,5 +17,15 @@
 
     </div>
   </div>
+</div>
+-->
+<div class="d-flex flex-row flex-wrap justify-content-center">
+
+    <div *ngFor="let chollo of chollos">
+      <div class="p-2">
+      <app-data-cards [dataChollos]="chollo"></app-data-cards>
+    </div>
+  </div>
+
 </div>
 

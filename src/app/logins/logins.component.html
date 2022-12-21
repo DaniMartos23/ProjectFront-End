@@ -10,12 +10,10 @@
 </div>
 -->
 
-<div class="container">
 
-  <div class="row mb-3">
-
-    <div class="col justify-content-center d-flex ">
-
+<div class="container d-flex flex-wrap align-items-center py-3 mt-auto ">
+  <div>
+    <div>
 
       <div *ngIf="registerDialog == false">
         <app-login></app-login>
@@ -32,8 +30,18 @@
           </mat-card-header>
           <mat-card-content>
 
-                      <img mat-card-md-image src="https://toppng.com/uploads/preview/birds-png-image1-birds-flying-in-the-sky-11562911395bfwwufpihs.png" alt="Photo of a Shiba Inu">
-                      <button type="button" class="btn btn-primary btn-lg" (click)="openOtherDialog()">Entrar</button>
+            <img
+              mat-card-md-image
+              src="https://toppng.com/uploads/preview/birds-png-image1-birds-flying-in-the-sky-11562911395bfwwufpihs.png"
+              alt="Photo of a Shiba Inu"
+            />
+            <button
+              type="button"
+              class="btn btn-success btn-lg but1"
+              (click)="openOtherDialog()"
+            >
+              login
+            </button>
 
           </mat-card-content>
         </mat-card>
@@ -62,6 +70,24 @@
 
        <br>
 
+
+<mat-card>
+          <mat-card-content>
+
+            <img
+              mat-card-md-image
+              src="https://toppng.com/uploads/preview/birds-png-image1-birds-flying-in-the-sky-11562911395bfwwufpihs.png"
+              alt="Photo of a Shiba Inu"
+            />
+            <button
+              type="button"
+              class="btn btn-success btn-lg bt2"
+              (click)="openOtherDialog()"
+            >
+              Registrarme
+            </button>
+          </mat-card-content>
+        </mat-card>
 
 
         <br />

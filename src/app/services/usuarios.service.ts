@@ -24,4 +24,6 @@ export class UsuariosService implements OnInit  {
     return this.http.put("https://projectback-end-production-59f5.up.railway.app/api/usuarios/perfil/"+this.usuario,data);
   }
 
+
+
 }
