@@ -4,7 +4,7 @@
   border: 2px solid black;
 }
 
-.block {
+.reservar-button {
     display: block;
     width: 100%;
     border: none;
@@ -14,7 +14,7 @@
     cursor: pointer;
     text-align: center;
   }
-  .block:hover {
+  .reservar-button:hover {
     background-color: #04AA6D;;
     color: black;
   }
@@ -25,4 +25,19 @@
 
   .hovernow:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+  }
+
+  .eliminar-button {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #ddd;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+  }
+  .eliminar-button:hover {
+    background-color: #d71111;;
+    color: black;
   }

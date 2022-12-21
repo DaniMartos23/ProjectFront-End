@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { usuario } from 'src/app/interfases/usuario';
+import { ReservasService } from 'src/app/services/reservas.service';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
 import { EditarUsuarioComponent } from './editarUsuario/editar-usuario/editar-usuario.component';
@@ -14,8 +15,9 @@ export class UsuarioComponent implements OnInit  {
 
   EditDialog = true;
   profileData = <usuario>{};
+  reservas: any;
 
-  constructor(private UsuarioService: UsuariosService, public tokenData: TokenStorageService,  public dialog: MatDialog,){}
+  constructor(private UsuarioService: UsuariosService, public tokenData: TokenStorageService,  public dialog: MatDialog,  public reservaService: ReservasService){}
 
 
 
@@ -24,6 +26,14 @@ export class UsuarioComponent implements OnInit  {
     this.profileData = data;
     console.log(this.profileData);
    });
+
+   this.reservaService.retornarReservasUsuario().subscribe(data =>{
+    this.reservas = data;
+    console.log(this.reservas);
+   })
+
+
+
   }
 
   openDialog(): void {
