@@ -10,9 +10,9 @@
 </div>
 -->
 
-<div class="container">
-  <div class="row">
-    <div class="col">
+<div class="container d-flex flex-wrap align-items-center py-3 mt-auto ">
+  <div>
+    <div>
       <div *ngIf="registerDialog == false">
         <app-login></app-login>
       </div>
@@ -33,10 +33,10 @@
             />
             <button
               type="button"
-              class="btn btn-primary btn-lg"
+              class="btn btn-success btn-lg but1"
               (click)="openOtherDialog()"
             >
-              Large button
+              login
             </button>
           </mat-card-content>
         </mat-card>
@@ -63,10 +63,10 @@
             />
             <button
               type="button"
-              class="btn btn-primary btn-lg"
+              class="btn btn-success btn-lg bt2"
               (click)="openOtherDialog()"
             >
-              Large button
+              Registrarme
             </button>
           </mat-card-content>
         </mat-card>
