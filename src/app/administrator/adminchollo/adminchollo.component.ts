@@ -79,7 +79,7 @@ mostrarmenu(numero: any) {
   eliminarchollo(numero: any) {
     this.serviciochollos.deletechollo(numero)
       .subscribe(result => this.datos = result)
-    this.menu = 1;
+    this.menu = 0;
   }
 
   mostrarchollos() {
