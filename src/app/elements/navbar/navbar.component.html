@@ -1,35 +1,34 @@
-<nav class="navbar navbar-expand-lg bg-light ">
-  <div class="container-fluid ">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container-fluid">
+  <!-- icono o nombre -->
+
+  <a class="navbar-brand" href="#">
+    <img  id="logo" src="assets/logo.png" alt="logo AmazingTrip" width="100" height="100">
+    <span class="text-warning">Amazingtrip</span>
+  </a>
+
+  <!-- boton del menu -->
+
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" routerLink="/">Menu</a>
-    <div class="collapse navbar-collapse " id="navbarTogglerDemo03">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  </button>
+
+    <!-- elementos del menu colapsable -->
+
+  <div class="collapse navbar-collapse" id="menu">
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#"><h3>Inicio</h3> </a>
+      </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" routerLink="/chollos"> <h3>Chollos</h3></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/chollos">Chollos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/viajes">Viajes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/hoteles">Hoteles</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/vuelos">Vuelos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/logins">Logins</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/administrator">Administrar</a>
+          <a class="nav-link" routerLink="/administrator"><h3>Administrar</h3></a>
         </li>
       </ul>
 
-        <button *ngIf="tokenData.getToken() == null" class="btn btn-outline-success " (click)="openDialog()">Entrar</button>
+        <button *ngIf="tokenData.getToken() == null" class="btn btn-outline-warning d-none d-md-inline-block " type="submit" (click)="openDialog()">Entrar</button>
         <div *ngIf="tokenData.getToken() != null">
         <a  class="btn btn-outline-success" routerLink="/perfil">Mi perfil</a>
         <a  class="btn btn-outline-success" (click)="tokenData.logout()">Desconectarse</a>
