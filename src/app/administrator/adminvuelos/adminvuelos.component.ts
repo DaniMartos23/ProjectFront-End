@@ -133,12 +133,12 @@ export class AdminvuelosComponent implements OnInit {
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       cancelButtonText: 'cancelar',
-      confirmButtonText: 'Eliminar el hotel'
+      confirmButtonText: 'editar el vuelo'
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire(
-          'Hotel editado',
-          'El hotel ha sido editado',
+          'vuelo editado',
+          'El vuelo ha sido editado',
           'success'
         );
 
