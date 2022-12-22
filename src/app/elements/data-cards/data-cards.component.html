@@ -9,7 +9,7 @@
 
   <div class="card card-size hovernow">
     <img src="{{dataChollos.image_url}}" class="card-img-top" height="300">
-      <h3 class="card-header text-end">Fecha de caducidad: {{dataChollos.fecha}}</h3>
+      <h3 class="card-header text-end">Fecha de caducidad: {{dataChollos.fecha | date: 'dd/MM/yyyy'}}</h3>
     <div class="card-body">
       <h1 class="card-title"><strong>{{dataChollos.titulo}}</strong></h1>
       <h2 class="card-title"><i>{{dataChollos.viajes.destino}}</i></h2>
@@ -48,7 +48,9 @@
          </div>
 
          <br>
-         <button *ngIf="isReserva == false" class="p-2 bd-highlight reservar-button" mat-stroked-button type="button" (click)="reservar(dataChollos.id_chollo)" >Reservar ahora</button>
+        <div> <h1><strong> Precio: {{dataChollos.precio}} € </strong></h1> </div>
+         <hr>
+         <button *ngIf="isReserva == false" class="p-2 bd-highlight reservar-button" mat-stroked-button type="button" (click)="reservar(dataChollos.id_chollo)" > Reservar ahora</button>
          <button *ngIf="isReserva == true" class="p-2 bd-highlight eliminar-button" mat-stroked-button type="button" (click)="eliminarReserva()" >Eliminar Reserva</button>
       </div>
     </div>

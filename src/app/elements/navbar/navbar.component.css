@@ -1,0 +1,12 @@
+img{
+  height: 50px;
+  width: 50px;
+  position: left;
+  color: aliceblue;
+  margin-right: 15px;
+}
+
+.custom-h3{
+  font-size: 18px;
+  font-weight: bold;
+}

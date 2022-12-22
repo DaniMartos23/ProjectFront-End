@@ -1,11 +1,12 @@
-<h1>Vuelos</h1>
 
-<div class="btn-group d-flex align-content-center">
-  <a class="btn btn-primary" (click)="mostrarmenu(1)">Crear vuelo</a>
-  <a class="btn btn-primary" (click)="mostrarvuelos()">Mostrar vuelos</a>
+
+<div class="btn-group d-flex align-content-center container">
+  <a class="btn btn-primary col-6 m-2" (click)="mostrarmenu(1)">Crear vuelo</a>
+  <a class="btn btn-primary col-6 m-2" (click)="mostrarvuelos()">Mostrar vuelos</a>
 </div>
 
-<div class="m-1 p-3 border border-dark" *ngIf="menu == 1 && !mod">
+<div class="m-1 p-3 bg-white card container mx-auto shadow" *ngIf="menu == 1">
+  <div class="card-body">
   <form (ngSubmit)="onSubmit(fcrear)" #fcrear="ngForm">
     <div>
       <label class="form-label" for="aerolinea"> Aereolinea </label>
@@ -49,6 +50,7 @@
         class="form-control"
         id="asignacion_asiento"
         type="text"
+        maxlength="2"
         [(ngModel)]="form.asignacion_asiento"
         name="asignacion_asiento"
         #asignacion_asiento="ngModel"
@@ -103,14 +105,18 @@
       />
     </div>
     <br />
-    <button class="button" type="submit">Crear</button>
+    <button class="btn btn-success btn-lg m-1" type="submit">Crear</button>
   </form>
 </div>
+</div>
 
-<div class="table-responsive" *ngIf="menu == 2 && !mod">
+<div class="m-1 p-3 bg-white card container mx-auto shadow" *ngIf="menu == 2 && !mod">
+  <div class="card-body">
+<div class="table-responsive" >
   <table class="table table-striped text-center table-bordered align-middle">
     <thead>
       <tr>
+        <th>ID</th>
         <th>Aerolinea</th>
         <th>tipoAsiento</th>
         <th>maletas</th>
@@ -119,10 +125,12 @@
         <th>escalas</th>
         <th>origen</th>
         <th>destino</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let dato of datos">
+        <td>{{ dato.id }}</td>
         <td>{{ dato.aerolinea }}</td>
         <td>{{ dato.tipoAsiento }}</td>
         <td>{{ dato.maletas }}</td>
@@ -141,8 +149,11 @@
     </tbody>
   </table>
 </div>
+  </div>
+</div>
 <br />
-<div class="m-1 p-3 border border-dark" *ngIf="mod==true">
+<div class="m-1 p-3 bg-white card container mx-auto shadow" *ngIf="mod == true">
+  <div class="card-body">
   <form (ngSubmit)="modifica(fmodificar)" #fmodificar="ngForm">
     <div>
       <label class="form-label" for="aerolinea"> Aereolinea </label>
@@ -248,7 +259,8 @@
       />
     </div>
     <br />
-    <button class="btn btn-success m-1" type="submit">Guardar</button>
-    <a class="btn btn-danger btn-sm m-1" (click)="mostrarvuelos()">Cancelar</a>
+    <button type="button" class="btn btn-success btn-lg m-1" type="submit">Guardar</button>
+    <a class="btn btn-danger btn-lg m-1" (click)="mostrarvuelos()">Cancelar</a>
   </form>
+</div>
 </div>

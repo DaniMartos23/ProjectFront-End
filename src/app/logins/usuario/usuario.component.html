@@ -1,93 +1,80 @@
-<!--
-<div class="main-container d-flex">
-  <div class="sidebar" id="side_nav"></div>
-  <div class="header-box px-2 pt-3 pb-4 d-flex justify-content-between">
-    <h1 class="fs-4">
-      <span class="bg-white text-dark rounded shadom px-2 me-2">CL</span>
-      <span class="text-white"> Zona VIP AmazingTrip</span>
-    </h1>
-    <button class="btn d-mb-none d-block close-btn px1 py-0 text-white">
-      <i class="fal fa-stream"></i>
-    </button>
-  </div>
+<div class="container mx-auto">
+  <div class="card my-5">
+    <div class="row">
+      <div class="col col-lg-3">
+        <div class="text-center margins">
+          <img
+            [src]="profileData.fotoPerfil"
+            class=" img-size text-center img-center"
+          />
+          <br />
+          <h1 class="display-1" style="margin-top: 15px;">{{ profileData.usuario }}</h1>
+          <h3>{{ profileData.nombre }} {{ profileData.apellidos }}</h3>
 
-  <ul class="list-unstyled px-2 pt-3 pb-4">
-    <li class="">
-      <a href="#" class="text-decoration-none px-3 py-2 d-block"
-        ><i class="fa-solid fa-cart-flatbed-suitcase"></i> Mis Reservas</a
-      >
-    </li>
-    <li class="">
-      <a href="#" class="text-decoration-none px-3 py-2 d-block"
-        ><i class="fa-solid fa-user"></i> Mis datos</a
-      >
-    </li>
-    <li class="">
-      <a href="#" class="text-decoration-none px-3 py-2 d-block"
-        ><i class="fal fa-bars"></i> Logout</a
-      >
-    </li>
-  </ul>
-  <hr class="h-color mx-2" />
-  <ul class="list-unstyled px-2 px-3 py-2 d-block">
-    <li class="">
-      <a href="#" class="text-decoration-none px-3 py-2 d-block"
-        ><i class="fa-solid fa-user-headset"></i> Ayuda</a
-      >
-    </li>
-    <li class="">
-      <a href="#" class="text-decoration-none px-3 py-2 d-block"
-        ><i class="fa-solid fa-user-headset"></i> Regresar al inicio</a
-      >
-    </li>
-  </ul>
-  <div class="content">
-    <div class="dashboard-content px-3 pt-4">
-      <h2 class="f2-5">Area VIP AmazongTrip</h2>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum, adipisci
-        atque. Distinctio pariatur sunt omnis incidunt rem facilis, tenetur
-        saepe animi inventore numquam in, minima quisquam cumque, possimus minus
-        asperiores!
-      </p>
-    </div>
-  </div>
-</div>
-
--->
-
-<div class="container">
-  <div class="row box">
-    <div class="col col-lg-3">
-
-      <div class="text-center card margins border-0">
-        <img [src]="profileData.fotoPerfil" class="rounded rounded-circle img-size text-center img-center"  width="100%" height="100%">
-        <br>
-        <h1  class="display-1">{{profileData.usuario}}</h1>
-        <h3>{{profileData.nombre}} {{profileData.apellidos}}</h3>
-
-        <div *ngIf="profileData.correo != null">Correo: {{profileData.correo}} </div>
-        <div *ngIf="profileData.ciudad != null">Ciudad: {{profileData.ciudad}}</div>
-        <div *ngIf="profileData.fechaNacimiento != null">Fecha de nacimiento: {{profileData.fechaNacimiento}}</div>
-        <br>
-        <button  class="p-2 bd-highlight reservar-button" mat-stroked-button (click)="openDialog()">Editar Perfil</button>
-        <button  class="p-2 bd-highlight eliminar-button" mat-stroked-button (click)="tokenData.logout()" routerLink="/home">Desconectarse</button>
+          <div *ngIf="profileData.correo != null">
+            Correo: {{ profileData.correo }}
+          </div>
+          <div *ngIf="profileData.ciudad != null">
+            Ciudad: {{ profileData.ciudad }}
+          </div>
+          <div *ngIf="profileData.fechaNacimiento != null">
+            Fecha de nacimiento: {{ profileData.fechaNacimiento }}
+          </div>
+          <br />
+          <button
+            class="p-2 bd-highlight reservar-button"
+            mat-stroked-button
+            (click)="openDialog()"
+          >
+            Editar Perfil
+          </button>
+          <hr />
+          <button
+            class="p-2 bd-highlight eliminar-button"
+            mat-stroked-button
+            (click)="tokenData.logout()"
+            routerLink="/home"
+          >
+            Desconectarse
+          </button>
+        </div>
       </div>
 
+      <div class="col col-lg-9">
+        <div class="text-center margins-reservas">
+          <h1><strong>Mis reservas</strong></h1>
+        </div>
 
-    </div>
 
-    <div class="col col-lg-9">
-        <div class=" text-center margins-reservas"><h1><strong>Mis reservas</strong></h1></div>
+        <div *ngIf="reservas != null">
+        <div class="d-flex flex-wrap justify-content-center">
 
-      <div class="d-flex flex-row flex-wrap justify-content-center">
 
-      <div *ngFor="let reservaChollo of reservas">
-        <div class="p-2 custom-card margins-reservas">
-        <app-data-cards [dataChollos]="reservaChollo.chollo" [reservaId]="reservaChollo.id" [isReserva]=true (cargarReservas)="getData($event)"></app-data-cards>
+          <div *ngFor="let reservaChollo of reservas">
+            <div class=" custom-card margins-reservas">
+              <app-data-cards
+                [dataChollos]="reservaChollo.chollo"
+                [reservaId]="reservaChollo.id"
+                [isReserva]="true"
+                (cargarReservas)="getData($event)"
+              ></app-data-cards>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div *ngIf="reservas == ''">
+          <div class="h1-custom text-warning text-center align-items-center" style="margin-top: 20%;">
+
+                ¡Todavia no tienes ninguna reserva!
+            <div style="margin-top: 45px;">
+                <a class="btn btn-success btn-lg" routerLink="/chollos">Ir a chollos</a>
+              </div>
+            </div>
+          </div>
+
+
       </div>
-      </div>
-</div>
     </div>
   </div>
 </div>

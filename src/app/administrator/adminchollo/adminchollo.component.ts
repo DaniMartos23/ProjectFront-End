@@ -4,6 +4,7 @@ import { ChollosService } from 'src/app/services/chollos.service';
 import { GeneralesService } from 'src/app/services/generales.service';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-adminchollo',
@@ -77,9 +78,36 @@ mostrarmenu(numero: any) {
   }
 
   eliminarchollo(numero: any) {
-    this.serviciochollos.deletechollo(numero)
-      .subscribe(result => this.datos = result)
-    this.menu = 0;
+
+
+    Swal.fire({
+      title: '¿Quieres eliminar el chollo?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'cancelar',
+      confirmButtonText: 'Eliminar el chollo'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'chollo eliminado',
+          'El chollo ha sido eliminado',
+          'success'
+        );
+
+        this.serviciochollos.deletechollo(numero)
+        .subscribe(result => this.datos = result)
+      this.menu = 0;
+
+
+        }
+      });
+
+
+
+
+
   }
 
   mostrarchollos() {
