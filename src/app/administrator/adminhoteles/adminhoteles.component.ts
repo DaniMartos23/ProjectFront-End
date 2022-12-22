@@ -128,7 +128,7 @@ export class AdminhotelesComponent {
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       cancelButtonText: 'cancelar',
-      confirmButtonText: 'Eliminar el hotel'
+      confirmButtonText: 'editar el hotel'
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire(
