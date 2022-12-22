@@ -5,12 +5,10 @@
         <div class="text-center margins">
           <img
             [src]="profileData.fotoPerfil"
-            class="rounded rounded-circle img-size text-center img-center"
-            width="75%"
-            height="75%"
+            class=" img-size text-center img-center"
           />
           <br />
-          <h1 class="display-1">{{ profileData.usuario }}</h1>
+          <h1 class="display-1" style="margin-top: 15px;">{{ profileData.usuario }}</h1>
           <h3>{{ profileData.nombre }} {{ profileData.apellidos }}</h3>
 
           <div *ngIf="profileData.correo != null">

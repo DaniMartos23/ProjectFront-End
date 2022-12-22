@@ -17,6 +17,12 @@ height: auto;
 
 .img-center {margin:0 auto;}
 
+img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
 .reservar-button {
   display: block;
   width: 100%;
