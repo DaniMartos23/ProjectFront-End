@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { GeneralesService } from 'src/app/services/generales.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-adminhoteles',
@@ -53,16 +54,41 @@ export class AdminhotelesComponent {
   }
 
   borrarhoteles(ids: number) {
-    this.serviciosgenerales
-      .deletedatos('hoteles', ids)
-      .subscribe((result) => (this.datos = result));
-    this.menu = 1;
+
+
+    Swal.fire({
+      title: '¿Quieres eliminar el hotel?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'cancelar',
+      confirmButtonText: 'Eliminar el hotel'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'hotel eliminado',
+          'El hotel ha sido eliminado',
+          'success'
+        );
+
+        this.serviciosgenerales
+        .deletedatos('hoteles', ids)
+        .subscribe((result) => (this.datos = result));
+      this.menu = 1;
+
+
+        }
+      });
+
+
   }
   modificahoteles(ids: number) {
     this.mod = true;
     this.serviciosgenerales
       .retornadato('hoteles', ids)
       .subscribe((result) => (this.datos = result));
+
   }
   modifica(fmodificar: NgForm) {
 
@@ -95,13 +121,37 @@ export class AdminhotelesComponent {
     }
 
 
-    this.serviciosgenerales
-      .updatedatos('hoteles', this.datos.id, this.form)
-      .subscribe((result) => {
-        this.datos = result;
-        this.mostrarhoteles();
-        fmodificar.resetForm();
+    Swal.fire({
+      title: '¿Quieres editar el hotel?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'cancelar',
+      confirmButtonText: 'Eliminar el hotel'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Hotel editado',
+          'El hotel ha sido editado',
+          'success'
+        );
+
+        this.serviciosgenerales
+        .updatedatos('hoteles', this.datos.id, this.form)
+        .subscribe((result) => {
+          this.datos = result;
+          this.mostrarhoteles();
+          fmodificar.resetForm();
+        });
+
+
+        }
       });
+
+
+
+
   }
 }
 

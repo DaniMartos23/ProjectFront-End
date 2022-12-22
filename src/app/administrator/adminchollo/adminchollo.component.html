@@ -51,10 +51,11 @@
       <input class="form-control" id="viajes" type="text" [(ngModel)]="form.viajes" name="viajes" #viajes="ngModel" />
     </div>
     <br />
-    <button class="button" type="submit">Crear</button>
+    <button class="btn btn-success btn-lg m-1" type="submit">Crear</button>
   </form>
 </div>
 
+<!--
 <div class="m-1 p-3" *ngIf="menu == 2">
   <div class="position-relative p-3" *ngFor="let chollo of datos">
 
@@ -64,6 +65,19 @@
       (click)="eliminarchollo(chollo.id_chollo)">-</a>
   </div>
 </div>
+-->
+<div class="m-1 p-3 d-flex flex-row flex-wrap justify-content-center" *ngIf="menu == 2">
+  <div class="position-relative p-3" *ngFor="let chollo of datos">
+    <div class="p-2">
+
+    <app-data-cards [dataChollos]="chollo"></app-data-cards>
+    <a class="btn btn-danger m-1 position-absolute top-0 end-0"
+    (click)="eliminarchollo(chollo.id_chollo)">-</a>
+  </div>
+
+  </div>
+</div>
+
 
 <div class="m-1 p-3" *ngIf="menu == 3">
   <form (ngSubmit)="buscachollo()">
