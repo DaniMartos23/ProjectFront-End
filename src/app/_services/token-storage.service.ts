@@ -4,24 +4,30 @@ import Swal from 'sweetalert2';
 
 const TOKEN_KEY = 'auth-token';
 const USER_KEY = 'auth-user'
+const USER_ROLE = 'user-role'
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class TokenStorageService {
-  constructor(private Route: Router) { }
+  constructor(private route: Router) { }
 
   signOut(): void{
     localStorage .clear();
   }
 
   public saveToken(token: string): void{
-    console.log(token);
+
     localStorage.removeItem(TOKEN_KEY);
     localStorage.setItem(TOKEN_KEY, token);
+
+
   }
 
+  public getRole(): string| null{
+    return localStorage.getItem(USER_ROLE);
+  }
   public getToken(): string| null{
     return localStorage.getItem(TOKEN_KEY);
   }
@@ -29,6 +35,11 @@ export class TokenStorageService {
   public saveUser(user: any): void{
     localStorage.removeItem(USER_KEY);
     localStorage.setItem(USER_KEY, JSON.stringify(user));
+
+    if(user == "login"){
+      localStorage.removeItem(USER_ROLE);
+      localStorage.setItem(USER_ROLE, "ROLE_ADMIN");
+    }
   }
 
   public getUser(): any {
@@ -42,6 +53,7 @@ export class TokenStorageService {
   public logout(): void {
     localStorage.removeItem(USER_KEY);
     localStorage.removeItem(TOKEN_KEY);
+    localStorage.removeItem(USER_ROLE);
 
     Swal.fire({
       position: 'bottom-end',
@@ -50,7 +62,7 @@ export class TokenStorageService {
       showConfirmButton: false,
       timer: 1500
     })
-
+    this.route.navigateByUrl('/home')
 
   }
 

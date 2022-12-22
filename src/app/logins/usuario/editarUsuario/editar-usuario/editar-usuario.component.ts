@@ -47,7 +47,7 @@ onSubmit(){
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
     cancelButtonText: 'cancelar',
-    confirmButtonText: 'Eliminar el texto'
+    confirmButtonText: 'Actualizar el perfil'
   }).then((result) => {
     if (result.isConfirmed) {
       Swal.fire(

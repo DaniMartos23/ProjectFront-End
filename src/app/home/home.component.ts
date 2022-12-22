@@ -12,7 +12,17 @@ export class HomeComponent implements OnInit {
   constructor(private serviciochollos: ChollosService){}
 
   ngOnInit(){
+    const aux: Array<any> = new Array();
     this.serviciochollos.retornarchollos()
-      .subscribe(result =>this.chollosmain=result)
+      .subscribe(result =>{
+
+        for (let index = 0; index < 4; index++) {
+          aux[index] = result[index];
+
+        }
+
+          this.chollosmain = aux;
+          console.log(this.chollosmain);
+      })
   }
 }

@@ -7,9 +7,8 @@ footer {
     position: relative;
   }
 img{
-  display: flex;
-  height: 28px;
-  width: 28px;
+  height: 150px;
+  width: 150px;
   position: left;
   color: aliceblue;
 

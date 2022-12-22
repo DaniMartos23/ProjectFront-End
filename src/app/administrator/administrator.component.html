@@ -1,85 +1,73 @@
-<h1 class="d-flex justify-content-center flex-wrap">Herramientas Administrador</h1>
 
+<div class="d-flex align-items-center mt-5 ">
+      <div class="card container mx-auto shadow" *ngIf="editor == 0">
+        <div class="card-body d-flex justify-content-center flex-wrap" >
+      <div>
+        <div class="margenes p-2">
+          <button
+            class="btn btn-custom btn-primary custom-button"
+            type="button"
+            (click)="cambiaeditor(1)"
+          >
+            <img class="invert"
+              src="https://img.icons8.com/windows/96/null/travel-portal.png"
+            />
+            <div class="font-text-size">Chollos</div>
+          </button>
+        </div>
 
-<div class="d-flex justify-content-center flex-wrap " *ngIf="editor == 0">
+        <div class="margenes p-2">
+          <button
+            class="btn btn-custom btn-primary custom-button shadow"
+            type="button"
+            (click)="cambiaeditor(3)"
+          >
+            <img class="invert"
+              src="https://img.icons8.com/ios-filled/100/null/suitcase.png"
+            />
+            <div class="font-text-size">Viajes</div>
+          </button>
+        </div>
+      </div>
 
-  <div>
+      <div>
+        <div class="margenes p-2">
+          <button
+            class="btn btn-custom btn-primary custom-button shadow"
+            type="button"
+            (click)="cambiaeditor(2)"
+          >
+          <img class="invert" src="https://img.icons8.com/material-outlined/96/000000/airplane-take-off.png"/>
+            <div class="font-text-size">Vuelos</div>
+          </button>
+        </div>
 
-  <div class="margenes p-2">
-    <button class="btn btn-custom btn-primary custom-button " type="button" (click)="cambiaeditor(1)">
-      <img src="https://img.icons8.com/windows/96/null/travel-portal.png"/>
-      <div class="font-text-size">Chollos</div>
-    </button>
-  </div>
-
-    <div class="margenes p-2">
-    <button class="btn btn-custom btn-primary custom-button " type="button" (click)="cambiaeditor(2)">
-      <img src="https://img.icons8.com/material-rounded/96/null/airplane-take-off.png"/>
-      <div class="font-text-size">Viajes</div>
-    </button>
-  </div>
-
-</div>
-
-<div>
-
-  <div class="margenes p-2">
-    <button class="btn btn-custom btn-primary custom-button " type="button" (click)="cambiaeditor(3)">
-      <img src="https://img.icons8.com/ios-filled/100/null/suitcase.png"/>
-      <div class="font-text-size">vuelos</div>
-    </button>
-  </div>
-
-  <div class="margenes p-2">
-    <button class="btn btn-custom btn-primary custom-button " type="button" (click)="cambiaeditor(4)">
-      <img src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/96/null/external-glyph-travel-tanah-basah-glyph-tanah-basah-40.png"/>
-      <div class="font-text-size">Hoteles</div>
-    </button>
-  </div>
-  </div>
-
-
-</div>
-
-<div class="d-flex flex-column mb-2 align-content-center" *ngIf="editor == 1">
-  <div>
-    <app-adminchollo></app-adminchollo>
-  </div>
-  <div>
-    <button class="btn btn-primary" type="button" (click)="cambiaeditor(0)">
-      Atras
-    </button>
-  </div>
-</div>
-
-<div class="d-flex flex-column mb-2 align-content-center" *ngIf="editor == 2">
-  <div>
-    <app-adminvuelos></app-adminvuelos>
-  </div>
-  <div>
-    <button class="btn btn-primary" type="button" (click)="cambiaeditor(0)">
-      Atras
-    </button>
+        <div class="margenes p-2">
+          <button
+            class="btn btn-custom btn-primary custom-button shadow"
+            type="button"
+            (click)="cambiaeditor(4)"
+          >
+            <img
+              class="invert" src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/96/null/external-glyph-travel-tanah-basah-glyph-tanah-basah-40.png"
+            />
+            <div class="font-text-size">Hoteles</div>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="d-flex flex-column mb-2 align-content-center" *ngIf="editor == 3">
+<div class="d-flex flex-column mb-2 align-content-center mt-4">
   <div>
-    <app-adminviajes></app-adminviajes>
+    <app-adminchollo *ngIf="editor == 1"></app-adminchollo>
+    <app-adminvuelos *ngIf="editor == 2"></app-adminvuelos>
+    <app-adminviajes *ngIf="editor == 3"></app-adminviajes>
+    <app-adminhoteles *ngIf="editor == 4"></app-adminhoteles>
   </div>
-  <div>
-    <button class="btn btn-primary" type="button" (click)="cambiaeditor(0)">
-      Atras
-    </button>
-  </div>
-</div>
-
-<div class="d-flex flex-column mb-2 align-content-center" *ngIf="editor == 4">
-  <div>
-    <app-adminhoteles></app-adminhoteles>
-  </div>
-  <div>
-    <button class="btn btn-primary" type="button" (click)="cambiaeditor(0)">
+  <div class="container" *ngIf="editor != 0">
+    <button class="btn btn-danger" type="button" (click)="cambiaeditor(0)">
       Atras
     </button>
   </div>

@@ -1,150 +1,276 @@
-<h1>Hoteles</h1>
-
-<div class="btn-group d-flex align-content-center">
-  <a class="btn btn-primary" (click)="mostrarmenu(1)">Crear hotel</a>
-  <a class="btn btn-primary" (click)="mostrarhoteles()">Mostrar hoteles</a>
+<div class="btn-group d-flex align-content-center container">
+  <a class="btn btn-primary col-6 m-2" (click)="mostrarmenu(1)">Crear hotel</a>
+  <a class="btn btn-primary col-6 m-2" (click)="mostrarhoteles()"
+    >Mostrar hoteles</a
+  >
 </div>
 
-<div class="m-1 p-3 border border-dark" *ngIf="menu == 1">
-  <form (ngSubmit)="onSubmit(fcrear)" #fcrear="ngForm">
-    <div>
-      <label class="form-label" for="nombre"> Nombre </label>
-      <input class="form-control" id="nombre" type="text" [(ngModel)]="form.nombre" name="nombre" #nombre="ngModel" />
-    </div>
-    <br />
-    <div>
-      <label for="direccion"> Direccion </label>
-      <input class="form-control" id="direccion" type="text" [(ngModel)]="form.direccion" name="direccion"
-        #direccion="ngModel" />
-    </div>
-    <br />
-    <div>
-      <label for="descripcion"> Descripcion </label>
-      <input class="form-control" id="descripcion" type="text" [(ngModel)]="form.descripcion" name="descripcion"
-        #descripcion="ngModel" />
-    </div>
-    <br />
-    <div>
-      <label for="localidad"> Localidad </label>
-      <input class="form-control" id="localidad" type="text" [(ngModel)]="form.localidad" name="localidad"
-        #localidad="ngModel" />
-    </div>
-    <br />
-    <div>
-      <label for="estrellas"> Estrellas </label>
-      <input class="form-control" id="estrellas" type="text" [(ngModel)]="form.estrellas" name="estrellas"
-        #estrellas="ngModel" />
-    </div>
-    <br />
-    <div>
-      <label for="tipo_habitaciones"> Tipo de habitaciones </label>
-      <input class="form-control" id="tipo_habitaciones" type="text" [(ngModel)]="form.tipo_habitaciones"
-        name="tipo_habitaciones" #tipo_habitaciones="ngModel" />
-    </div>
-    <br />
-    <div>
-      <label for="mascotas"> Permitido mascotas </label>
-      <input class="form-control" id="mascotas" type="text" [(ngModel)]="form.mascotas" name="mascotas"
-        #mascotas="ngModel" />
-    </div>
-    <br />
-    <div>
-      <label for="tipo_pension"> Tipo de pensión </label>
-      <input class="form-control" id="tipo_pension" type="text" [(ngModel)]="form.tipo_pension" name="tipo_pension"
-        #tipo_pension="ngModel" />
-    </div>
-    <br />
-    <button class="btn btn-success btn-lg m-1" type="submit">Crear</button>
-  </form>
+<div class="m-1 p-3 bg-white card container mx-auto shadow" *ngIf="menu == 1">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit(fcrear)" #fcrear="ngForm">
+      <div>
+        <label class="form-label" for="nombre"> Nombre </label>
+        <input
+          class="form-control"
+          id="nombre"
+          type="text"
+          [(ngModel)]="form.nombre"
+          name="nombre"
+          #nombre="ngModel"
+        />
+      </div>
+      <br />
+      <div>
+        <label for="direccion"> Direccion </label>
+        <input
+          class="form-control"
+          id="direccion"
+          type="text"
+          [(ngModel)]="form.direccion"
+          name="direccion"
+          #direccion="ngModel"
+        />
+      </div>
+      <br />
+      <div>
+        <label for="descripcion"> Descripcion </label>
+        <input
+          class="form-control"
+          id="descripcion"
+          type="text"
+          [(ngModel)]="form.descripcion"
+          name="descripcion"
+          #descripcion="ngModel"
+        />
+      </div>
+      <br />
+      <div>
+        <label for="localidad"> Localidad </label>
+        <input
+          class="form-control"
+          id="localidad"
+          type="text"
+          [(ngModel)]="form.localidad"
+          name="localidad"
+          #localidad="ngModel"
+        />
+      </div>
+      <br />
+      <div>
+        <label for="estrellas"> Estrellas </label>
+        <input
+          class="form-control"
+          id="estrellas"
+          type="number"
+          [(ngModel)]="form.estrellas"
+          name="estrellas"
+          #estrellas="ngModel"
+        />
+      </div>
+      <br />
+      <div>
+        <label for="tipo_habitaciones"> Tipo de habitaciones </label>
+        <input
+          class="form-control"
+          id="tipo_habitaciones"
+          type="text"
+          [(ngModel)]="form.tipo_habitaciones"
+          name="tipo_habitaciones"
+          #tipo_habitaciones="ngModel"
+        />
+      </div>
+      <br />
+      <div>
+        <label for="mascotas"> Permitido mascotas </label>
+        <input
+          class="form-control"
+          id="mascotas"
+          type="text"
+          [(ngModel)]="form.mascotas"
+          name="mascotas"
+          #mascotas="ngModel"
+        />
+      </div>
+      <br />
+      <div>
+        <label for="tipo_pension"> Tipo de pensión </label>
+        <input
+          class="form-control"
+          id="tipo_pension"
+          type="text"
+          [(ngModel)]="form.tipo_pension"
+          name="tipo_pension"
+          #tipo_pension="ngModel"
+        />
+      </div>
+      <br />
+      <button class="btn btn-success btn-lg m-1" type="submit">Crear</button>
+    </form>
+  </div>
 </div>
 
-<div class="table-responsive" *ngIf="menu == 2 && !mod">
-  <table class="table table-striped text-center table-bordered align-middle">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Direccion</th>
-        <th>Descripcion</th>
-        <th>Localidad</th>
-        <th>Estrellas</th>
-        <th>Tipo de habitaciones</th>
-        <th>Mascotas</th>
-        <th>Tipo de pension</th>
-
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let dato of datos">
-        <td>{{ dato.nombre}}</td>
-        <td>{{ dato.direccion }}</td>
-        <td>{{ dato.descripcion }}</td>
-        <td>{{ dato.localidad }}</td>
-        <td>{{ dato.estrellas }}</td>
-        <td>{{ dato.tipo_habitaciones }}</td>
-        <td>{{ dato.mascotas }}</td>
-        <td>{{ dato.tipo_pension }}</td>
-        <td>
-          <div class="d-flex flex-column mb-2">
-            <a class="btn btn-success btn-sm m-1" (click)="modificahoteles(dato.id)">+</a>
-            <a class="btn btn-danger btn-sm m-1" (click)="borrarhoteles(dato.id)">-</a>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class="m-1 p-3 bg-white card container mx-auto shadow" *ngIf="menu == 2 && !mod">
+  <div class="card-body">
+    <div class="table-responsive" >
+      <table
+        class="table table-striped text-center table-bordered align-middle"
+      >
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Descripcion</th>
+            <th>Localidad</th>
+            <th>Estrellas</th>
+            <th>Tipo de habitaciones</th>
+            <th>Mascotas</th>
+            <th>Tipo de pension</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let dato of datos">
+            <td>{{ dato.id }}</td>
+            <td>{{ dato.nombre }}</td>
+            <td>{{ dato.direccion }}</td>
+            <td>{{ dato.descripcion }}</td>
+            <td>{{ dato.localidad }}</td>
+            <td>{{ dato.estrellas }}</td>
+            <td>{{ dato.tipo_habitaciones }}</td>
+            <td>{{ dato.mascotas }}</td>
+            <td>{{ dato.tipo_pension }}</td>
+            <td>
+              <div class="d-flex flex-column mb-2">
+                <a
+                  class="btn btn-success btn-sm m-1"
+                  (click)="modificahoteles(dato.id)"
+                  >+</a
+                >
+                <a
+                  class="btn btn-danger btn-sm m-1"
+                  (click)="borrarhoteles(dato.id)"
+                  >-</a
+                >
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 <br />
-<div class="m-1 p-3 border border-dark" *ngIf="mod == true">
+
+<div class="m-1 p-3 bg-white card container mx-auto shadow" *ngIf="mod == true">
+  <div class="card-body">
   <form (ngSubmit)="modifica(fmodificar)" #fmodificar="ngForm">
     <div>
       <label class="form-label" for="nombre"> Nombre </label>
-      <input class="form-control" id="nombre" type="text" [(ngModel)]="form.nombre" name="nombre" #nombre="ngModel"
-        placeholder="{{ datos.nombre}}" />
+      <input
+        class="form-control"
+        id="nombre"
+        type="text"
+        [(ngModel)]="form.nombre"
+        name="nombre"
+        #nombre="ngModel"
+        placeholder="{{ datos.nombre }}"
+      />
     </div>
     <br />
     <div>
       <label for="direccion"> Direccion </label>
-      <input class="form-control" id="direccion" type="text" [(ngModel)]="form.direccion" name="direccion"
-        #direccion="ngModel" placeholder="{{ datos.direccion }}" />
+      <input
+        class="form-control"
+        id="direccion"
+        type="text"
+        [(ngModel)]="form.direccion"
+        name="direccion"
+        #direccion="ngModel"
+        placeholder="{{ datos.direccion }}"
+      />
     </div>
     <br />
     <div>
       <label for="descripcion"> Descripcion </label>
-      <input class="form-control" id="descripcion" type="text" [(ngModel)]="form.descripcion" name="descripcion"
-        #descripcion="ngModel" placeholder="{{ datos.descripcion }}" />
+      <input
+        class="form-control"
+        id="descripcion"
+        type="text"
+        [(ngModel)]="form.descripcion"
+        name="descripcion"
+        #descripcion="ngModel"
+        placeholder="{{ datos.descripcion }}"
+      />
     </div>
     <br />
     <div>
       <label for="localidad"> Localidad </label>
-      <input class="form-control" id="localidad" type="text" [(ngModel)]="form.localidad" name="localidad"
-        #localidad="ngModel" placeholder="{{ datos.localidad }}" />
+      <input
+        class="form-control"
+        id="localidad"
+        type="text"
+        [(ngModel)]="form.localidad"
+        name="localidad"
+        #localidad="ngModel"
+        placeholder="{{ datos.localidad }}"
+      />
     </div>
     <br />
     <div>
       <label for="estrellas"> Estrellas </label>
-      <input class="form-control" id="estrellas" type="text" [(ngModel)]="form.estrellas" name="estrellas"
-        #estrellas="ngModel" placeholder="{{ datos.estrellas }}" />
+      <input
+        class="form-control"
+        id="estrellas"
+        type="text"
+        [(ngModel)]="form.estrellas"
+        name="estrellas"
+        #estrellas="ngModel"
+        placeholder="{{ datos.estrellas }}"
+      />
     </div>
     <br />
     <div>
       <label for="tipo_habitaciones"> Tipo de habitaciones </label>
-      <input class="form-control" id="tipo_habitaciones" type="text" [(ngModel)]="form.tipo_habitaciones"
-        name="tipo_habitaciones" #tipo_habitaciones="ngModel" placeholder="{{ datos.tipo_habitaciones }}" />
+      <input
+        class="form-control"
+        id="tipo_habitaciones"
+        type="text"
+        [(ngModel)]="form.tipo_habitaciones"
+        name="tipo_habitaciones"
+        #tipo_habitaciones="ngModel"
+        placeholder="{{ datos.tipo_habitaciones }}"
+      />
     </div>
     <br />
     <div>
       <label for="mascotas"> Permitido mascotas </label>
-      <input class="form-control" id="mascotas" type="text" [(ngModel)]="form.mascotas" name="mascotas"
-        #mascotas="ngModel" placeholder="{{ datos.mascotas }}" />
+      <input
+        class="form-control"
+        id="mascotas"
+        type="text"
+        [(ngModel)]="form.mascotas"
+        name="mascotas"
+        #mascotas="ngModel"
+        placeholder="{{ datos.mascotas }}"
+      />
     </div>
     <br />
     <div>
       <label for="tipo_pension"> Tipo de pensión </label>
-      <input class="form-control" id="tipo_pension" type="text" [(ngModel)]="form.tipo_pension" name="tipo_pension"
-        #tipo_pension="ngModel" placeholder="{{ datos.tipo_pension }}" />
+      <input
+        class="form-control"
+        id="tipo_pension"
+        type="text"
+        [(ngModel)]="form.tipo_pension"
+        name="tipo_pension"
+        #tipo_pension="ngModel"
+        placeholder="{{ datos.tipo_pension }}"
+      />
     </div>
     <br />
     <button class="btn btn-success btn-lg m-1" type="submit">Guardar</button>
     <a class="btn btn-danger btn-lg m-1" (click)="mostrarhoteles()">Cancelar</a>
   </form>
+</div>
 </div>

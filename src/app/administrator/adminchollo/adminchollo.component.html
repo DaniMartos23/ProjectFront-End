@@ -1,11 +1,12 @@
-<h1>Chollos!</h1>
 
-<div class="btn-group d-flex align-content-center">
-  <a class="btn btn-primary" (click)="mostrarmenu(1)">Crear chollo</a>
-  <a class="btn btn-primary" (click)="mostrarchollos()">Mostrar chollos</a>
+
+<div class="btn-group d-flex align-content-center container" style="column-gap: 24px;">
+  <a class="btn btn-primary col-6 " (click)="mostrarmenu(1)">Crear chollo</a>
+  <a class="btn btn-primary col-6 " (click)="mostrarchollos()">Mostrar chollos</a>
 </div>
 
-<div class="m-1 p-3" *ngIf="menu == 1">
+<div class="m-1 p-3 bg-white card container mx-auto shadow" *ngIf="menu == 1">
+  <div class="card-body">
   <form (ngSubmit)="creachollos()">
     <div>
       <label class="form-label" for="fecha"> Fecha caducidad </label>
@@ -19,7 +20,7 @@
     <br />
     <div>
       <label class="form-label" for="precio"> precio </label>
-      <input class="form-control" id="precio" type="text" [(ngModel)]="form.precio" name="precio" #precio="ngModel" />
+      <input class="form-control" id="precio" type="number" [(ngModel)]="form.precio" name="precio" #precio="ngModel" />
     </div>
     <br />
     <div>
@@ -30,13 +31,13 @@
     <br />
     <div>
       <label class="form-label" for="valoracion"> valoracion </label>
-      <input class="form-control" id="valoracion" type="text" [(ngModel)]="form.valoracion" name="valoracion"
+      <input class="form-control" id="valoracion" type="number" [(ngModel)]="form.valoracion" name="valoracion"
         #valoracion="ngModel" />
     </div>
     <br />
     <div>
       <label class="form-label" for="unidades"> unidades </label>
-      <input class="form-control" id="unidades" type="text" [(ngModel)]="form.unidades" name="unidades"
+      <input class="form-control" id="unidades" type="number" [(ngModel)]="form.unidades" name="unidades"
         #unidades="ngModel" />
     </div>
     <br />
@@ -48,13 +49,13 @@
     <br />
     <div>
       <label class="form-label" for="viajes"> ID_viaje </label>
-      <input class="form-control" id="viajes" type="text" [(ngModel)]="form.viajes" name="viajes" #viajes="ngModel" />
+      <input class="form-control" id="viajes" type="number" [(ngModel)]="form.viajes" name="viajes" #viajes="ngModel" />
     </div>
     <br />
     <button class="btn btn-success btn-lg m-1" type="submit">Crear</button>
   </form>
 </div>
-
+</div>
 <!--
 <div class="m-1 p-3" *ngIf="menu == 2">
   <div class="position-relative p-3" *ngFor="let chollo of datos">

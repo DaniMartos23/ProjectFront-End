@@ -74,7 +74,7 @@ export class DataCardsComponent implements OnInit {
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         cancelButtonText: 'cancelar',
-        confirmButtonText: 'Eliminar el texto'
+        confirmButtonText: 'Eliminar la reserva'
       }).then((result) => {
         if (result.isConfirmed) {
           Swal.fire(

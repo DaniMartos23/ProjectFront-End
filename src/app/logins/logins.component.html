@@ -10,88 +10,68 @@
 </div>
 -->
 
+<div class="container align-items-center mx-auto p-4 bg-custom">
 
-<div class="container d-flex flex-wrap align-items-center py-3 mt-auto ">
-  <div>
-    <div>
-
+<div class="row">
+  <div class="col-6 d-flex align-items-center">
       <div *ngIf="registerDialog == false">
         <app-login></app-login>
       </div>
-      <div *ngIf="registerDialog == true">
-        <mat-card class="example-card">
 
-         <mat-card-header>
+      <div *ngIf="registerDialog == true">
+
+        <mat-card>
+          <mat-card-header>
             <div mat-card-avatar class="example-header-image justify-content-center"></div>
             <mat-card-title>¿Ya tienes cuenta?</mat-card-title>
-            <mat-card-subtitle
-              >Accede a ella de forma gratuita</mat-card-subtitle
-            >
+            <mat-card-subtitle>Accede a ella de forma gratuita</mat-card-subtitle>
           </mat-card-header>
+
           <mat-card-content>
 
-            <img
-              mat-card-md-image
-              src="https://toppng.com/uploads/preview/birds-png-image1-birds-flying-in-the-sky-11562911395bfwwufpihs.png"
-              alt="Photo of a Shiba Inu"
-            />
+            <div class="d-flex justify-content-center">
             <button
               type="button"
-              class="btn btn-success btn-lg but1"
-              (click)="openOtherDialog()"
-            >
-              login
+              class="btn btn-success btn-lg mt-2"
+              (click)="openOtherDialog()">
+              Iniciar sesión
             </button>
-
+          </div>
           </mat-card-content>
         </mat-card>
+
       </div>
     </div>
 
 
-    <div class="container d-flex justify-content-center">
-
+    <div class="col-6 d-flex align-items-center">
       <div *ngIf="registerDialog == true">
+
         <app-register></app-register>
-     </div>
-     <div *ngIf="registerDialog == false">
-       <mat-card class="example-card">
-         <mat-card-header>
-           <div mat-card-avatar class="example-header-image"></div>
-           <mat-card-title>¿No tienes cuenta?</mat-card-title>
-           <mat-card-subtitle>registrate de forma gratiuta</mat-card-subtitle>
-         </mat-card-header>
+      </div>
+      <div *ngIf="registerDialog == false">
 
-         <mat-card-content>
-                     <img mat-card-md-image src="https://toppng.com/uploads/preview/birds-png-image1-birds-flying-in-the-sky-11562911395bfwwufpihs.png" alt="Photo of a Shiba Inu">
-                     <button type="button" class="btn btn-primary btn-lg " (click)="openOtherDialog()">Registrarte</button>
-         </mat-card-content>
-       </mat-card>
-
-       <br>
-
-
-<mat-card>
+        <mat-card >
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>¿No tienes cuenta?</mat-card-title>
+            <mat-card-subtitle>registrate de forma gratiuta</mat-card-subtitle>
+          </mat-card-header>
           <mat-card-content>
-
-            <img
-              mat-card-md-image
-              src="https://toppng.com/uploads/preview/birds-png-image1-birds-flying-in-the-sky-11562911395bfwwufpihs.png"
-              alt="Photo of a Shiba Inu"
-            />
+            <div class="d-flex justify-content-center">
             <button
               type="button"
-              class="btn btn-success btn-lg bt2"
+              class="btn btn-success btn-lg"
               (click)="openOtherDialog()"
             >
               Registrarme
             </button>
+          </div>
           </mat-card-content>
         </mat-card>
 
 
-        <br />
       </div>
     </div>
-  </div>
+</div>
 </div>

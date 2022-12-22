@@ -23,7 +23,7 @@
 
 <button (click)="datos()">Log in</button>
 -->
-
+<mat-card>
 <form name="form" method="post" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
 
   <mat-card-content id="content3" class="d-flex flex-column bd-highlight mb-3">
@@ -54,5 +54,7 @@
 
   <button class="p-2 bd-highlight" mat-stroked-button type="submit">Entrar</button>
   </mat-card-content>
+
 </form>
+</mat-card>
 

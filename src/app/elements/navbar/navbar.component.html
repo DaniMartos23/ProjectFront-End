@@ -2,8 +2,8 @@
   <div class="container-fluid">
   <!-- icono o nombre -->
 
-  <a class="navbar-brand" href="#">
-    <img  id="logo" src="assets/logo.png" alt="logo AmazingTrip" width="100" height="100">
+  <a class="navbar-brand" routerLink="/home">
+    <img  id="logo" src="assets/logo.png" alt="logo AmazingTrip" >
     <span class="text-warning">Amazingtrip</span>
   </a>
 
@@ -18,22 +18,23 @@
   <div class="collapse navbar-collapse" id="menu">
     <ul class="navbar-nav me-auto">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#"><h3>Inicio</h3> </a>
+        <a class="nav-link  custom-h3 p-2" aria-current="page" routerLink="/home">Inicio </a>
       </li>
         <li class="nav-item">
-          <a class="nav-link active" routerLink="/chollos"> <h3>Chollos</h3></a>
+          <a class="nav-link  custom-h3 p-2" routerLink="/chollos"> Chollos</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/administrator"><h3>Administrar</h3></a>
+        <li class="nav-item" *ngIf="tokenData.getRole() == 'ROLE_ADMIN'">
+          <a class="nav-link custom-h3 p-2"  routerLink="/administrator">Administrar</a>
         </li>
       </ul>
 
         <button *ngIf="tokenData.getToken() == null" class="btn btn-outline-warning d-none d-md-inline-block " type="submit" (click)="openDialog()">Entrar</button>
         <div *ngIf="tokenData.getToken() != null">
-        <a  class="btn btn-outline-success" routerLink="/perfil">Mi perfil</a>
-        <a  class="btn btn-outline-success" (click)="tokenData.logout()">Desconectarse</a>
+        <a  class="btn btn-outline-warning" style="margin-right: 25px;" routerLink="/perfil">Mi perfil</a>
+        <a  class="btn btn-outline-warning" (click)="tokenData.logout()">Desconectarse</a>
       </div>
 
     </div>
   </div>
 </nav>
+

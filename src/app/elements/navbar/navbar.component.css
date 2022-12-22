@@ -1,8 +1,12 @@
 img{
-  display: flex;
-  height: 28px;
-  width: 28px;
+  height: 50px;
+  width: 50px;
   position: left;
   color: aliceblue;
+  margin-right: 15px;
+}
 
+.custom-h3{
+  font-size: 18px;
+  font-weight: bold;
 }
