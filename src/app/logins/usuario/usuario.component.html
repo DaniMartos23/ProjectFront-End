@@ -71,6 +71,7 @@
         <div *ngIf="profileData.fechaNacimiento != null">Fecha de nacimiento: {{profileData.fechaNacimiento}}</div>
         <br>
         <button  class="p-2 bd-highlight reservar-button" mat-stroked-button (click)="openDialog()">Editar Perfil</button>
+        <hr>
         <button  class="p-2 bd-highlight eliminar-button" mat-stroked-button (click)="tokenData.logout()" routerLink="/home">Desconectarse</button>
       </div>
 

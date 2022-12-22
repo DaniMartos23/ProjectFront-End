@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { GeneralesService } from 'src/app/services/generales.service';
 import { UsuariosService } from 'src/app/services/usuarios.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-adminvuelos',
@@ -61,10 +62,35 @@ export class AdminvuelosComponent implements OnInit {
   }
 
   borrarvuelo(ids: number) {
-    this.serviciosgenerales
-      .deletedatos('vuelos', ids)
-      .subscribe((result) => (this.datos = result));
-    this.menu = 1;
+
+    Swal.fire({
+      title: '¿Quieres eliminar el vuelo?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'cancelar',
+      confirmButtonText: 'Eliminar el vuelo'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Registro eliminado',
+          'El vuelo ha sido eliminado',
+          'success'
+        );
+
+        this.serviciosgenerales
+        .deletedatos('vuelos', ids)
+        .subscribe((result) => (this.datos = result));
+      this.menu = 1;
+
+
+        }
+      });
+
+
+
+
   }
   modificavuelo(ids: number) {
     this.mod = true;
@@ -72,6 +98,8 @@ export class AdminvuelosComponent implements OnInit {
       .retornadato('vuelos', ids)
       .subscribe((result) => (this.datos = result));
   }
+
+
   modifica(fmodificar:NgForm) {
     if (this.form.aerolinea == null) {
       this.form.aerolinea=this.datos.aerolinea
@@ -98,10 +126,33 @@ export class AdminvuelosComponent implements OnInit {
       this.form.destino=this.datos.destino
     }
 
-    this.serviciosgenerales.updatedatos("vuelos",this.datos.id,this.form)
-    .subscribe((result) => {(this.datos = result )
-      this.mostrarvuelos()
-      fmodificar.resetForm();})
+    Swal.fire({
+      title: '¿Quieres editar el vuelo?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'cancelar',
+      confirmButtonText: 'Eliminar el hotel'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Hotel editado',
+          'El hotel ha sido editado',
+          'success'
+        );
+
+
+        this.serviciosgenerales.updatedatos("vuelos",this.datos.id,this.form)
+        .subscribe((result) => {(this.datos = result )
+          this.mostrarvuelos()
+          fmodificar.resetForm();})
+
+
+        }
+      });
+
+
 
   }
 }

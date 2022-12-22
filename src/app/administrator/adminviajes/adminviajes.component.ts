@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { GeneralesService } from 'src/app/services/generales.service';
 import { UsuariosService } from 'src/app/services/usuarios.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-adminviajes',
@@ -84,10 +85,34 @@ export class AdminviajesComponent implements OnInit {
   }
 
   borrarviajes(ids: number) {
-    this.serviciosgenerales
-      .deletedatos('viajes', ids)
-      .subscribe((result) => (this.datos = result));
-    this.menu = 1;
+
+
+    Swal.fire({
+      title: '¿Quieres eliminar el viaje?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'cancelar',
+      confirmButtonText: 'Eliminar el viaje'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'viaje eliminado',
+          'El viaje ha sido eliminado',
+          'success'
+        );
+
+        this.serviciosgenerales
+        .deletedatos('viajes', ids)
+        .subscribe((result) => (this.datos = result));
+      this.menu = 1;
+
+
+
+        }
+      });
+
   }
   modificaviajes(ids: number) {
     this.mod = true;
@@ -121,14 +146,33 @@ export class AdminviajesComponent implements OnInit {
     }
 
 
-    this.serviciosgenerales
-      .updatedatos('viajes', this.datos.id, this.form)
-      .subscribe((result) => {
-        this.datos = result;
-        this.mostrarviajes();
-        fmodificar.resetForm();
-      });
 
+
+      Swal.fire({
+        title: '¿Quieres editar el viaje?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'cancelar',
+        confirmButtonText: 'editar el viaje'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Viaje editado',
+            'El viaje ha sido editado',
+            'success'
+          );
+          this.serviciosgenerales
+          .updatedatos('viajes', this.datos.id, this.form)
+          .subscribe((result) => {
+            this.datos = result;
+            this.mostrarviajes();
+            fmodificar.resetForm();
+          });
+
+          }
+        });
 
   }
 }
